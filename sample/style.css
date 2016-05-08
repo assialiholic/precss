@@ -1,0 +1,331 @@
+/* ==========================================================================
+Base
+========================================================================== */
+a, p, dt, h1, h2, h3, h4, h5, h6 {
+  word-break: break-all;
+}
+
+.cf:before,
+.cf:after {
+  content: " ";
+  display: table;
+}
+
+.cf:after {
+  clear: both;
+}
+
+.cf {
+  *zoom: 1;
+}
+
+/* ==========================================================================
+Layout
+========================================================================== */
+/* Header
+========================================================================== */
+.ly_header {
+  width: 100%;
+  padding: 1% 0;
+  margin: 0 auto;
+  background-color: #f4d9d9;
+}
+
+/* Body
+========================================================================== */
+.ly_body {
+  width: 100%;
+  padding: 2%;
+  box-sizing: border-box;
+  margin: 0 auto;
+  background-color: #f9ebd1;
+}
+
+.ly_main {
+  float: left;
+  width: 68%;
+  padding: 2%;
+  box-sizing: border-box;
+  background-color: #d7f5e0;
+  border: 1px solid #ccc;
+}
+
+.ly_side {
+  float: right;
+  width: 30%;
+  padding: 2%;
+  box-sizing: border-box;
+  background-color: #ecefc9;
+  border: 1px solid #ccc;
+}
+
+/* Footer
+========================================================================== */
+.ly_footer {
+  width: 100%;
+  padding: 1% 0;
+  margin: 0 auto;
+  box-sizing: border-box;
+  background-color: #dbd9e5;
+}
+
+/* ==========================================================================
+Block Module
+========================================================================== */
+/* Section
+========================================================================== */
+.bl_sectBlock {
+  padding: 1%;
+  margin: 0 0 20px 0;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+.bl_sectBlock > *:last-child {
+  margin-bottom: 0;
+}
+
+.bl_sectBlock.bl_sectBlock__sml > .bl_sectBlock_ttl {
+  font-size: .8em;
+}
+
+.bl_sectBlock.bl_sectBlock__sml > .bl_sectBlock_txt {
+  font-size: .5em;
+}
+
+.bl_sectBlock.bl_sectBlock__sml .bl_sectBlock_txt_img {
+  width: 5%;
+}
+
+.bl_sectBlock > .bl_imgBlock {
+  width: 25%;
+  float: left;
+  margin: 0 10px 10px 0;
+}
+
+.bl_sectBlock_ttl {
+  font-size: 1.1em;
+  margin: 0 0 10px 0;
+  border-bottom: 1px solid currentColor;
+}
+
+.bl_sectBlock_txt {
+  margin: 0 0 20px 0;
+}
+
+.bl_sectBlock_txt.bl_sectBlock_txt__r49p {
+  float: right;
+  width: 49%;
+}
+
+.bl_sectBlock_txt_img {
+  float: left;
+  margin: 0 10px 10px 0;
+}
+
+.bl_sectBlock_txt_img.bl_sectBlock_txt_img__rev {
+  float: right;
+  margin: 0 0 10px 10px;
+}
+
+.bl_sectBlock.bl_sectBlock__hasImgBlock > .bl_imgBlock {
+  width: 49%;
+  float: left;
+}
+
+.bl_sectBlock.bl_sectBlock__hasImgBlock > .bl_sectBlock_txt {
+  float: right;
+  width: 49%;
+}
+
+.bl_sectBlock2 {
+  padding: 1%;
+  margin: 0 0 20px 0;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+.bl_sectBlock2 > *:last-child {
+  margin-bottom: 0;
+}
+
+.bl_sectBlock2_ttl {
+  font-size: 1.1em;
+  margin: 0 0 10px 0;
+  border-bottom: 1px solid currentColor;
+}
+
+.bl_sectBlock2_txt {
+  margin: 0 0 20px 0;
+  width: 49%;
+  float: right;
+}
+
+.bl_sectBlock2_txt_img {
+  float: left;
+  margin: 0 10px 10px 0;
+}
+
+.bl_sectBlock2 > .bl_imgBlock {
+  float: left;
+  width: 49%;
+}
+
+/* Image Block
+========================================================================== */
+.bl_imgUnit {
+  padding: 1%;
+  margin: 0 0 20px 0;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.bl_imgUnit > .bl_imgBlock {
+  display: inline-block;
+  margin: 0 2% 0 0;
+}
+
+.bl_imgUnit > .bl_imgBlock:last-child {
+  margin-right: 0;
+}
+
+.bl_imgUnit__col2 > .bl_imgBlock {
+  width: 47%;
+}
+
+.bl_imgUnit__col3 > .bl_imgBlock {
+  width: 30%;
+}
+
+.bl_imgBlock {
+  padding: 1%;
+  margin: 0 0 20px 0;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  text-align: center;
+}
+
+.bl_imgBlock_ttl {
+  font-weight: bold;
+  font-size: 1em;
+}
+
+.bl_imgBlock_img > img {
+  width: 100%;
+  max-width: 100px;
+}
+
+.bl_imgBlock_txt {
+  line-height: 1.2;
+}
+
+.bl_imgBlock.bl_imgBlock__sml > .bl_imgBlock_ttl {
+  margin: 0 0 5px 0;
+  font-size: .8em;
+}
+
+.bl_imgBlock.bl_imgBlock__sml > .bl_imgBlock_img {
+  margin: 0 0 5px 0;
+}
+
+.bl_imgBlock.bl_imgBlock__sml > .bl_imgBlock_img > img {
+  max-width: 80px;
+}
+
+.bl_imgBlock.bl_imgBlock__sml .bl_imgBlock_txt {
+  margin: 0 0 10px 0;
+  font-size: .8em;
+}
+
+/* ==========================================================================
+Element Module
+========================================================================== */
+/* Button
+========================================================================== */
+.el_btn {
+  display: inline-block;
+  max-width: 200px;
+  padding: .5em 1em;
+  margin: 0 0 20px;
+  border-radius: 5px;
+  background-color: #9b948a;
+  box-sizing: border-box;
+  box-shadow: 0 3px 0 #5f5e5e;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  transition: .25s;
+}
+
+.el_btn.el_btn__w100p {
+  width: 100%;
+  max-width: 100%;
+}
+
+.el_btn.el_btn__orange {
+  background-color: #E18700;
+  box-shadow: 0 3px 0 #B85F29;
+}
+
+.el_btn.el_btn__blue {
+  background-color: #308EDE;
+  box-shadow: 0 3px 0 #2572B1;
+}
+
+.ly_header > .el_btn {
+  float: right;
+  margin: 0 20px 0 0;
+}
+
+.el_btn:hover {
+  opacity: .75;
+}
+
+/* Label
+========================================================================== */
+.el_label {
+  display: inline-block;
+  padding: .2em .5em;
+  margin: 3px 0 3px 5px;
+  background-color: #000;
+  color: #fff;
+  font-size: 12px;
+  font-weight: normal;
+}
+
+.el_label.el_label__red {
+  background-color: #de5b5b;
+}
+
+.el_label.el_label__blue {
+  background-color: #308EDE;
+}
+
+/* Title
+========================================================================== */
+.el_lyName {
+  margin: 0 0 10px 0;
+  text-align: center;
+  font-size: 1em;
+}
+
+.el_blName {
+  text-align: center;
+  font-size: 1em;
+}
+
+/* ==========================================================================
+Helper
+========================================================================== */
+/* Padding/Margin
+========================================================================== */
+.hp_mb20 {
+  margin-bottom: 20px !important;
+}
+
+/* Font/Text
+========================================================================== */
+.hp_tac {
+  text-align: center !important;
+}

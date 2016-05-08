@@ -1,0 +1,1529 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>PRECSS - Manage your CSS with prefixes.</title>
+  <meta name="description" content="PRECSS is a new modular architecture approach based on OOCSS, SMACSS and BEM.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="PRECSS - Manage your CSS with prefixes." />
+  <meta property="og:url" content="http://precss.io/" />
+  <meta property="og:image" content="http://precss.io/images/ogimage.png" />
+  <meta property="og:description" content="PRECSS is a new modular architecture approach based on OOCSS, SMACSS and BEM." />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="PRECSS - Manage your CSS with prefixes." />
+  <meta name="twitter:image" content="http://precss.io/images/ogimage.png" />
+  <meta name="twitter:description" content="PRECSS is a new modular architecture approach based on OOCSS, SMACSS and BEM.">
+  <link rel="shortcut icon" href="/images/favicon.ico" />
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+  <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro|Rokkitt' rel='stylesheet' type='text/css'>
+</head>
+<body>
+<header class="ly_header">
+    <div class="ly_header_inner">
+      <div class="bl_headerConts">
+        <p class="bl_headerConts_logo"><img src="/images/logo.svg" alt="PRE_CSS"></p>
+        <ul class="bl_headerConts_nav">
+          <li><i class="fa fa-github" aria-hidden="true"></i><a href="">GitHub</a></li>
+        </ul>
+      </div>
+      <!-- /.bl_headerConts -->
+    </div>
+    <!-- /.ly_header_inner -->
+    <section class="bl_MV">
+      <div class="bl_MV_inner">
+        <h1 class="bl_MV_ttl">Manage your CSS<br>with prefixes.</h1>
+        <!-- <p class="bl_MV_img"><img src="/images/MV.png" alt=""></p> -->
+        <pre class="bl_MV_code js_split">
+          &lt;div class="<span class="hp_cBlue">ly_header</span>"&gt;...&lt;/div&gt;&nbsp;&nbsp;<span class="hp_cGray hp_fsi">&lt;!-- layout --&gt;</span>
+          &lt;div class="<span class="hp_cBlue">ly_main</span>"&gt;
+              &lt;div class="<span class="hp_cGreen">bl_sectBlock</span>"&gt;&nbsp;&nbsp;<span class="hp_cGray hp_fsi">&lt;!-- block module --&gt;</span>
+                  &lt;h2 class="<span class="hp_cGreen">bl_sectBlock_ttl</span>"&gt;PRECSS&lt;/h2&gt;
+                  &lt;p class="<span class="hp_cGreen">bl_sectBlock_txt</span> <span class="hp_cViolet">hp_mb20</span>"&gt;CSS with prefixes.&lt;/p&gt;&nbsp;&nbsp;<span class="hp_cGray hp_fsi">&lt;!-- helper --&gt;</span>
+              &lt;/div&gt;
+          &lt;/div&gt;
+          &lt;div class="<span class="hp_cBlue">ly_side</span>"&gt;
+              &lt;a href="#" class="<span class="hp_cOrange">el_btn</span>"&gt;Try PRECSS&lt;/a&gt;&nbsp;&nbsp;<span class="hp_cGray hp_fsi">&lt;!-- element module --&gt;</span>
+              &lt;a href="#" class="<span class="hp_cOrange">el_btn</span> <span class="hp_cRed">el_btn__blue</span>"&gt;Back&lt;/a&gt;&nbsp;&nbsp;<span class="hp_cGray hp_fsi">&lt;!-- modifier --&gt;</span>
+          &lt;/div&gt;
+          &lt;div class="<span class="hp_cBlue">ly_footer</span>"&gt;...&lt;/div&gt;
+        </pre>
+      </div>
+      <!-- /.bl_MV_inner -->
+    </section>
+    <!-- /.bl_MV -->
+</header>
+<article>
+  <div class="ly_main">
+    <div class="ly_main_inner">
+      <section class="bl_catch">
+        <h2 class="bl_catch_head">OOCSSやSMACSS、BEMの素晴らしさ巧みに取り入れ<br>更に進化させた強力なモジュール設計。それがPRECSSです。</h2>
+        <div class="bl_featureUnit bl_featureUnit__col2 cf">
+          <dl class="bl_featureBlock">
+            <dt><i class="fa fa-sort-alpha-asc hp_fz1_5e" aria-hidden="true"></i><br>全てに接頭辞を付加</dt>
+            <dd>
+              PRECSSの管理下にあるクラスは、全て種類に応じた接頭辞が付加されます。これにより接頭辞を一目見ただけで役割、スコープ、依存の全てを把握することができます。<br>
+              もうモジュールの大きさに悩まないでください。
+            </dd>
+          </dl>
+          <dl class="bl_featureBlock">
+            <dt><i class="fa fa-check-circle hp_fz1_5e" aria-hidden="true"></i><br>最適化された命名規則</dt>
+            <dd>
+              クラス名は全てスネークケースとキャメルケースの混成で構成され、それらの使い分けには明確なルールがあります。<br>
+              省略語についても指針を示しているため、今までのように悩んだあげく、とても長い名前を付ける必要はもうありません。
+            </dd>
+          </dl>
+        </div>
+        <!-- /.bl_featureUnit -->
+        <div class="bl_featureUnit bl_featureUnit__col3 cf">
+          <dl class="bl_featureBlock">
+            <dt class="js_matchHeight"><i class="fa fa-heart hp_fz1_3e" aria-hidden="true"></i><br>親しみやすい設計</dt>
+            <dd>
+              PRECSSは全く新しい設計思想ではありません。OOCSSやSMACSS、BEMなど今までの賞賛すべき素晴らしい思想が基になっています。<br>あなたがモダンな開発者であるほど、PRECSSは親しみやすいものに感じるでしょう。
+            </dd>
+          </dl>
+          <dl class="bl_featureBlock">
+            <dt class="js_matchHeight"><i class="fa fa-users hp_fz1_3e" aria-hidden="true"></i><br>他種族との共存</dt>
+            <dd>
+              明確な独自記法により、あなたが書いたクラスとCMSやCSSフレームワークが出力したクラスを明確に区別することができるでしょう。<br>
+              全てPRECSSのルールに従わなければならないのではなく、他の者も受け入れる柔軟さがPRECSSにはあります。
+            </dd>
+          </dl>
+          <dl class="bl_featureBlock">
+            <dt class="js_matchHeight"><i class="fa fa-university hp_fz1_3e" aria-hidden="true"></i><br>&le; コーディングルール</dt>
+            <dd>
+              ドキュメントが長いと感じますか？今までのCSSが破綻した原因は、ドキュメントの短さにありました。<br>
+              コーディングルールのベースになることを目指しているPRECSSは、ときにとても細かい話もします。<br>
+              誰が書いても、なるべく破綻しないために。
+            </dd>
+          </dl>
+        </div>
+        <!-- /.bl_featureUnit bl_featureUnit__col3 -->
+      </section>
+    </div>
+    <!-- /.ly_main_inner -->
+  </div>
+  <!-- /.ly_main -->
+
+  <div class="bl_sectBlockCalm">
+    <p class="bl_sectBlockCalm_txt">Basics</p>
+  </div>
+  <!-- /.bl_sectBlockCalm -->
+
+  <div class="ly_main">
+    <div class="ly_main_inner">
+      <section class="bl_sectBlock">
+        <h2 class="el_ttl">記法</h2>
+        <p class="el_sectTxt">
+          CSSの記述方法それ自体については、基本的に<a href="https://google.github.io/styleguide/htmlcssguide.xml" target="_blank">Google HTML/CSS Style Guide</a>、<a href="https://github.com/necolas/idiomatic-css" target="_blank">Principles of writing consistent, idiomatic CSS</a>に則ることを推奨します。
+        </p>
+      </section>
+      <section class="bl_sectBlock">
+        <div class="bl_sectBlock">
+          <h2 class="el_ttl">命名規則</h2>
+          <p class="el_sectTxt">
+            PRECSSでは、意図的に記述する全てのクラスに種類に応じた接頭辞を付加します。<br>
+            接頭辞及び単語間は全て構造に基づきスネークケースで結合し、1つの構造内に複数の単語がある場合はその部分のみキャメルケースを使用します。<br>
+            基本的にスタイルのためのID属性は使用せず、全てクラス属性でまかないます。
+          </p>
+          
+          
+  <div class="bl_codeBlock">
+    <em class="bl_codeBlock_ttl">Not recommended</em>
+    <pre class="brush:html; class-name:'light'; highlight:[]">
+      
+            &lt;div class=&#34;bl_img_block&#34;&gt;
+              &lt;div class=&#34;bl_img_block_header&#34;&gt;
+                ...
+              &lt;/div&gt;
+              &lt;div class=&#34;bl_img_block_body&#34;&gt;
+                ...
+              &lt;/div&gt;
+            &lt;/div&gt;
+    </pre>
+  </div>
+  <!-- /.bl_codeBlock -->
+
+          
+          
+  <div class="bl_codeBlock">
+    <em class="bl_codeBlock_ttl">Recommended</em>
+    <pre class="brush:html; class-name:''; highlight:[]">
+      
+            &lt;div class=&#34;bl_imgBlock&#34;&gt;
+              &lt;div class=&#34;bl_imgBlock_header&#34;&gt;
+                ...
+              &lt;/div&gt;
+              &lt;div class=&#34;bl_imgBlock_body&#34;&gt;
+                ...
+              &lt;/div&gt;
+            &lt;/div&gt;
+    </pre>
+  </div>
+  <!-- /.bl_codeBlock -->
+
+        </div>
+        <!-- /.bl_sectBlock -->
+
+        <section class="bl_sectBlock2">
+          <h5 class="el_ttl2">汎用的に使用可能な名前</h5>
+          <ul class="bl_simpleList">
+            <li>_wrapper</li>
+            <li>_inner</li>
+            <li>_header</li>
+            <li>_body</li>
+            <li>_footer</li>
+          </ul>
+          <p class="el_sectTxt">
+            これらは後述する5つのグループいずれにおいても、必要に応じて汎用的に使用することができます。<br>
+            特に<span class="el_inlineCode">_wrapper</span>と<span class="el_inlineCode">_inner</span>においては、構造として明確であり、かえって冗長性が増すためその子要素に名前を継承させる必要はありません。
+          </p>
+          
+          
+  <div class="bl_codeBlock">
+    <em class="bl_codeBlock_ttl">Not recommended</em>
+    <pre class="brush:html; class-name:'light'; highlight:[]">
+      
+            &lt;div class=&#34;bl_imgBlock_wrapper&#34;&gt;
+              &lt;div class=&#34;bl_imgBlock_wrapper_inner&#34;&gt;
+                &lt;div class=&#34;bl_imgBlock_wrapper_inner_header&#34;&gt;
+                  ...
+                &lt;/div&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+    </pre>
+  </div>
+  <!-- /.bl_codeBlock -->
+
+          
+          
+  <div class="bl_codeBlock">
+    <em class="bl_codeBlock_ttl">Recommended</em>
+    <pre class="brush:html; class-name:''; highlight:[]">
+      
+            &lt;div class=&#34;bl_imgBlock_wrapper&#34;&gt;
+              &lt;div class=&#34;bl_imgBlock&#34;&gt;
+                &lt;div class=&#34;bl_imgBlock_inner&#34;&gt;
+                  &lt;div class=&#34;bl_imgBlock_header&#34;&gt;
+                    ...
+                  &lt;/div&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+    </pre>
+  </div>
+  <!-- /.bl_codeBlock -->
+
+        </section>
+        <!-- /.bl_sectBlock2 -->
+
+        <section class="bl_sectBlock2">
+          <h3 class="el_ttl2">単語を省略する場合</h3>
+          <p class="el_sectTxt">
+            CSSにおけるモジュール設計は非常に素晴らしいアイディアですが、命名が冗長になってしまうのは避けられない問題です。<br>
+            PRECSSでは特に規則を設けませんが、単語を省略する場合は<a href="https://goo.gl/VblUdM" target="_blank">Google HTML/CSS Style Guide</a>に基づくことを推奨します。<br>
+            また2語以上で1つのまとまりを表す語群は、それぞれの頭文字の大文字のみで表現することも推奨します。ただし、ある程度一般的であったり、連続するパターンがあることが望ましいでしょう。<br>
+            その他、一般的に使われる語を参考として併せて提示します。
+          </p>
+          <dl class="bl_definitionList">
+            <dt>一般的な例</dt>
+            <dd>・mainVisual→MV</dd>
+          </dl>
+          <dl class="bl_definitionList">
+            <dt>連続するパターンの例</dt>
+            <dd>・northEurope→NE</dd>
+            <dd>・northAmerica→NA</dd>
+            <dd>・centralSouthAmerica→CSA</dd>
+          </dl>
+          <dl class="bl_definitionList">
+            <dt>よく使われる省略語</dt>
+            <dd class="sp_ovs">
+              <table class="bl_colTable hp_ML1e hp_ti0">
+                <tr>
+                  <th>セクション系</th>
+                  <td>cat - category</td>
+                  <td>col/cl - colomn</td>
+                  <td>cont/conts - content(s)</td>
+                  <td>lv - level</td>
+                  <td>sect - section</td>
+                </tr>
+                <tr>
+                  <th rowspan="2">単体系</th>
+                  <td>btn - button</td>
+                  <td>cf - clearfix</td>
+                  <td>img - image</td>
+                  <td>lnk - link</td>
+                  <td>num - number</td>
+                </tr>
+                <tr>
+                  <td>txt - text</td>
+                  <td>ttl - title</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <th>モディファイア</th>
+                  <td>lrg - large</td>
+                  <td>l - left</td>
+                  <td>rev - reverse</td>
+                  <td>r - right</td>
+                  <td>sml - small</td>
+                </tr>
+              </table>
+            </dd>
+          </dl>
+        </section>
+        <!-- /.bl_sectBlock2 -->
+
+        <section class="bl_sectBlock2">
+          <h3 class="el_ttl2">シリーズを形成する場合</h3>
+           <p class="el_sectTxt">
+             類似しているものは連番を付けて管理することを推奨します。ただし、シリーズを形成する、しないに関わらず1つ目のものには連番を付けません。
+          </p>
+          
+          
+  <div class="bl_codeBlock">
+    <em class="bl_codeBlock_ttl">Not recommended</em>
+    <pre class="brush:html; class-name:'light'; highlight:[1]">
+      
+            &lt;div class=&#34;bl_imgBlock1&#34;&gt;...&lt;/div&gt;
+            &lt;div class=&#34;bl_imgBlock2&#34;&gt;...&lt;/div&gt;
+            &lt;div class=&#34;bl_imgBlock3&#34;&gt;...&lt;/div&gt;
+    </pre>
+  </div>
+  <!-- /.bl_codeBlock -->
+
+          
+          
+  <div class="bl_codeBlock">
+    <em class="bl_codeBlock_ttl">Recommended</em>
+    <pre class="brush:html; class-name:''; highlight:[1]">
+      
+            &lt;div class=&#34;bl_imgBlock&#34;&gt;...&lt;/div&gt;
+            &lt;div class=&#34;bl_imgBlock2&#34;&gt;...&lt;/div&gt;
+            &lt;div class=&#34;bl_imgBlock3&#34;&gt;...&lt;/div&gt;
+    </pre>
+  </div>
+  <!-- /.bl_codeBlock -->
+
+        </section>
+        <!-- /.bl_sectBlock2 -->
+      </section>
+      <!-- /.bl_sectBlock -->
+    </div>
+    <!-- /.ly_main_inner -->
+  </div>
+  <!-- /.ly_main -->
+
+<div class="bl_sectBlockCalm">
+  <p class="bl_sectBlockCalm_txt">Documentation</p>
+</div>
+<!-- /.bl_sectBlockCalm -->
+
+  <div class="ly_main hp_bgcLightPink">
+    <div class="ly_main_inner">
+      <section class="bl_sectBlock">
+        <div class="bl_sectBlock">
+          <h2 class="el_ttl">基本設計</h2>
+          <p class="el_sectTxt">
+            PRECSSは下記の5つのグループから構成されています。<br>
+            <span class="el_note">※ソースコードは最低限解説に必要な記述のみを記載しています。</span>
+          </p>
+          <ol class="bl_simpleList">
+            <li>ベース</li>
+            <li>レイアウト</li>
+            <li>
+              モジュール
+              <ol class="bl_simpleList hp_mb0">
+                <li>ブロックモジュール</li>
+                <li>エレメントモジュール</li>
+              </ol>
+            </li>
+            <li>ヘルパー</li>
+            <li>プログラム</li>
+            <li>(オリジナル)</li>
+          </ol>
+        </div>
+        <!-- /.bl_sectBlock -->
+
+        <section class="bl_sectBlock2">
+          <h3 class="el_ttl2">1.ベース</h3>
+          <p class="el_sectTxt">
+            <em class="el_note2">接頭辞：なし</em>
+          </p>
+          <p class="el_sectTxt">
+            ベースはSMACSSと同じように扱います。reset.cssやnormalize.cssによる素地作りの他、サイト全体にまつわるスタイルを要素セレクタに直接指定します。<br>
+            またPRECSSでは、特定のスコープ内における限定的なベーススタイルの適用も許容します。<br>
+            例えば「ヘッダー内のリンクは全て白色だが、コンテンツエリア内は青色に統一したい」という場合に、限定的なベーススタイルを使用します。
+          </p>
+          
+          
+  <div class="bl_codeBlock">
+    <em class="bl_codeBlock_ttl">CSS</em>
+    <pre class="brush:css; class-name:''; highlight:[]">
+      
+            .ly_header a {
+              color: #fff;
+            }
+            .ly_body a {
+              color: blue;
+            }
+    </pre>
+  </div>
+  <!-- /.bl_codeBlock -->
+
+        </section>
+        <!-- /.bl_sectBlock2 -->
+
+        <section class="bl_sectBlock2">
+          <h3 class="el_ttl2">2.レイアウト</h3>
+          <p class="el_sectTxt">
+            <em class="el_note2">接頭辞：ly_</em>
+          </p>
+          <p class="el_sectTxt">
+            lyはlayoutの略です。ヘッダー、ボディエリア、メインエリア、サイドエリア、フッター等の大きなレイアウトを形成する要素に使用します。
+          </p>
+          <iframe class="el_iframe js_iframe" src="/sample/layout.html"></iframe>
+          
+          
+  <div class="bl_codeBlock">
+    <em class="bl_codeBlock_ttl">HTML</em>
+    <pre class="brush:html; class-name:''; highlight:[]">
+      
+            &lt;header class=&#34;ly_header&#34;&gt;
+              ...
+            &lt;/header&gt;
+            &lt;div class=&#34;ly_body&#34;&gt;
+              &lt;div class=&#34;ly_main&#34;&gt;
+                ...
+              &lt;/div&gt;
+              &lt;div class=&#34;ly_side&#34;&gt;
+                ...
+              &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;footer class=&#34;ly_footer&#34;&gt;
+              ...
+            &lt;/footer&gt;
+    </pre>
+  </div>
+  <!-- /.bl_codeBlock -->
+
+          
+          
+  <div class="bl_codeBlock">
+    <em class="bl_codeBlock_ttl">CSS</em>
+    <pre class="brush:css; class-name:''; highlight:[]">
+      
+            .ly_header {
+              background-color: #f4d9d9;
+            }
+            .ly_body {
+              width: 100%
+              max-width: 960px;
+              margin: 0 auto;
+              background-color: #f9ebd1;
+            }
+            .ly_main {
+              float: left;
+              width: 68%;
+              background-color: #d7f5e0;
+            }
+            .ly_side {
+              float: right;
+              width: 30%;
+              background-color: #ecefc9;
+            }
+            .ly_footer {
+              background-color: #dbd9e5;
+            }
+    </pre>
+  </div>
+  <!-- /.bl_codeBlock -->
+
+        </section>
+        <!-- /.bl_sectBlock2 -->
+
+        <section class="bl_sectBlock2">
+          <h3 class="el_ttl2">3.モジュール</h3>
+          <p class="el_sectTxt">
+            PRECSSでは移植性の高いコードをモジュールとして管理します。
+          </p>
+
+          <section class="bl_sectBlock3">
+            <h4 class="el_ttl3">3-1.ブロックモジュール</h4>
+            <p class="el_sectTxt">
+              <em class="el_note2">接頭辞：bl_</em>
+            </p>
+            <p class="el_sectTxt">
+              blはblockの略です。ブロックモジュール特有の複数の子要素や、後述するエレメントモジュールを内包し、<em class="el_caution">一つの塊として持ち運び可能なモジュール群</em>を形成します。<br>
+              ブロックモジュールの子要素は基本的に親の名前を継承し、子となるに従いアンダースコアで結合することで構造を明確にします。
+            </p>
+            <iframe class="el_iframe js_iframe" src="/sample/blockModule.html"></iframe>
+            
+            
+  <div class="bl_codeBlock">
+    <em class="bl_codeBlock_ttl">HTML</em>
+    <pre class="brush:html; class-name:''; highlight:[]">
+      
+              &lt;div class=&#34;bl_sectBlock&#34;&gt;
+                &lt;h2 class=&#34;bl_sectBlock_ttl&#34;&gt;.bl_sectBlock&lt;/h2&gt;
+                &lt;p class=&#34;bl_sectBlock_txt&#34;&gt;
+                  &lt;img class=&#34;bl_sectBlock_txt_img&#34; src=&#34;&#34;&gt;
+                  Lorem ipsum...
+                &lt;/p&gt;
+              &lt;/div&gt;
+
+              &lt;div class=&#34;bl_imgBlock&#34;&gt;
+                &lt;h3 class=&#34;bl_imgBlock_ttl&#34;&gt;.bl_imgBlock&lt;/h3&gt;
+                &lt;p class=&#34;bl_imgBlock_img&#34;&gt;&lt;img src=&#34;&#34;&gt;&lt;/p&gt;
+                &lt;p class=&#34;bl_imgBlock_txt&#34;&gt;
+                  Lorem ipsum...
+                &lt;/p&gt;
+              &lt;/div&gt;
+    </pre>
+  </div>
+  <!-- /.bl_codeBlock -->
+
+            
+            
+  <div class="bl_codeBlock">
+    <em class="bl_codeBlock_ttl">CSS</em>
+    <pre class="brush:css; class-name:''; highlight:[]">
+      
+              .bl_sectBlock {
+                padding: 1%;
+                margin: 0 0 20px 0;
+                border: 1px solid #ccc;
+              }
+              .bl_sectBlock_ttl {...}
+              .bl_sectBlock_txt {...}
+              .bl_sectBlock_txt_img {...}
+
+              .bl_imgBlock {
+                padding: 1%;
+                margin: 0 0 20px 0;
+                border: 1px solid #ccc;
+                text-align: center;
+              }
+              .bl_imgBlock_ttl {...}
+              .bl_imgBlock_img {
+                &gt; img {...}
+              }
+              .bl_imgBlock_txt {...}
+    </pre>
+  </div>
+  <!-- /.bl_codeBlock -->
+
+
+            <p class="el_sectTxt">
+              PRECSSではSMACSSと同様に、子要素のタグにスタイルを直接指定することを許容します。ただしその際はなるべく子セレクタで指定をすること、<span class="el_inlineCode">div</span>や<span class="el_inlineCode">span</span>等のセマンティックでない要素は独自のクラスを付加することを推奨します。<br>
+              また、あまり階層が深くなり過ぎるとコードの見通しや詳細度の管理に影響が出る恐れがあるため、ネストは3階層程度までを目処とし、それ以上になりそうな場合は適宜クラスを付加することを推奨します。
+            </p>
+            
+            
+  <div class="bl_codeBlock">
+    <em class="bl_codeBlock_ttl">HTML</em>
+    <pre class="brush:html; class-name:''; highlight:[]">
+      
+                &lt;ul class=&#34;bl_circleList&#34;&gt;
+                  &lt;li&gt;list 1&lt;/li&gt;
+                  &lt;li&gt;list 2&lt;/li&gt;
+                &lt;/ul&gt;
+    </pre>
+  </div>
+  <!-- /.bl_codeBlock -->
+
+            
+            
+  <div class="bl_codeBlock">
+    <em class="bl_codeBlock_ttl">CSS</em>
+    <pre class="brush:css; class-name:''; highlight:[]">
+      
+                .bl_circleList {
+                  padding-left: 1em;
+                  margin: 0 0 20px 0;
+                }
+                .bl_circleList &gt; li {
+                  list-style-type: circle;
+                }
+    </pre>
+  </div>
+  <!-- /.bl_codeBlock -->
+
+
+            <section class="bl_sectBlock4">
+            <h5 class="el_ttl4">ブロックモジュールに適用可能なスタイル</h5>
+            <p class="el_sectTxt">
+              注意点として、<em class="el_caution">ブロックモジュールには他の要素に影響を及ぼさないスタイルのみを適用します</em>(<span class="el_inlineCode">margin-top/bottom</span>は例外として直接適用可能)。<br>
+              他に影響を及ぼすスタイル、即ち<span class="el_inlineCode">float</span>や<span class="el_inlineCode">width</span>等のレイアウトに関わるものは、一層上の親からネストする形でスタイルを適用します。<br>
+              <em class="el_caution">即ちブロックモジュールの幅の初期値は、なるべく100%であることが望ましく</em>、このことにより高い拡張性と移植性が実現されます。<br>
+              この挙動については、カラムを持つブロックモジュールを例に考えると理解しやすいでしょう。
+            </p>
+              <section class="bl_sectBlock5">
+                <h6 class="el_ttl5">1カラムの例</h5>
+                <p class="bl_sectBlock5_txt">
+                  この例ではこれが最小のブロックモジュールであり、レイアウトに関する指定をしないことで単体で使用できるほか、何処へでも移植することが可能です。
+                </p>
+                <iframe class="el_iframe js_iframe" src="/sample/blockModule2.html"></iframe>
+                
+                
+  <div class="bl_codeBlock">
+    <em class="bl_codeBlock_ttl">HTML</em>
+    <pre class="brush:html; class-name:''; highlight:[]">
+      
+                  &lt;div class=&#34;bl_imgBlock&#34;&gt;
+                    &lt;h3 class=&#34;bl_imgBlock_ttl&#34;&gt;bl_imgBlock&lt;/h3&gt;
+                    &lt;p class=&#34;bl_imgBlock_img&#34;&gt;&lt;img src=&#34;//goo.gl/7lQK1g&#34;&gt;&lt;/p&gt;
+                    &lt;p class=&#34;bl_imgBlock_txt&#34;&gt;
+                      Lorem ipsum...
+                    &lt;/p&gt;
+                  &lt;/div&gt;
+    </pre>
+  </div>
+  <!-- /.bl_codeBlock -->
+
+                
+                
+  <div class="bl_codeBlock">
+    <em class="bl_codeBlock_ttl">CSS</em>
+    <pre class="brush:css; class-name:''; highlight:[]">
+      
+                  .bl_imgBlock {
+                    margin: 0 0 20px 0;
+                    border: 1px solid #ccc;
+                    text-align: center;
+                  }
+                  .bl_imgBlock_ttl {
+                    font-weight: bold;
+                    font-size: 1em;
+                  }
+                  .bl_imgBlock_img {
+                    &gt; img {
+                      width: 100%;
+                      max-width: 100px;
+                    }
+                  }
+                  .bl_imgBlock_txt {
+                    line-height: 1.2;
+                  }
+    </pre>
+  </div>
+  <!-- /.bl_codeBlock -->
+
+              </section>
+              <!-- /.bl_sectBlock5 -->
+
+              <section class="bl_sectBlock5">
+                <h6 class="el_ttl5">複数カラムの例</h5>
+                <p class="bl_sectBlock5_txt">
+                  <span class="el_inlineCode">bl_imgUnit</span>という要素でラップすることにより、上記のブロックモジュールを侵すことなく再利用することができます(このとき<span class="el_inlineCode">margin-top/bottom</span>にも変更が必要な場合は、併せて上書きします)。<br>
+                  さらに<span class="el_inlineCode">bl_imgUnit</span>自体が高次のブロックモジュールとなったため、<em class="el_caution">今後は<span class="el_inlineCode">bl_imgUnit</span>を他に移植することも可能</em>となります。<br>
+                  またwidthをカラム数に応じたモディファイアから制御することで、高い拡張性を実現します。
+                </p>
+                <iframe class="el_iframe js_iframe" src="/sample/blockModule3.html"></iframe>
+                
+                
+  <div class="bl_codeBlock">
+    <em class="bl_codeBlock_ttl">HTML</em>
+    <pre class="brush:html; class-name:''; highlight:[1,9,12,23]">
+      
+                  &lt;div class=&#34;bl_imgUnit bl_imgUnit__col2&#34;&gt;
+                    &lt;h2 class=&#34;el_blName&#34;&gt;.bl_imgUnit__col2&lt;/h2&gt;
+                    &lt;div class=&#34;bl_imgBlock&#34;&gt;
+                      ...
+                    &lt;/div&gt;
+                    &lt;div class=&#34;bl_imgBlock&#34;&gt;
+                      ...
+                    &lt;/div&gt;
+                  &lt;/div&gt;
+
+                  &lt;div class=&#34;bl_imgUnit bl_imgUnit__col3&#34;&gt;
+                    &lt;h2 class=&#34;el_blName&#34;&gt;.bl_imgUnit__col3&lt;/h2&gt;
+                    &lt;div class=&#34;bl_imgBlock&#34;&gt;
+                      ...
+                    &lt;/div&gt;
+                    &lt;div class=&#34;bl_imgBlock&#34;&gt;
+                      ...
+                    &lt;/div&gt;
+                    &lt;div class=&#34;bl_imgBlock&#34;&gt;
+                      ...
+                    &lt;/div&gt;
+                  &lt;/div&gt;
+    </pre>
+  </div>
+  <!-- /.bl_codeBlock -->
+
+                
+                
+  <div class="bl_codeBlock">
+    <em class="bl_codeBlock_ttl">CSS</em>
+    <pre class="brush:css; class-name:''; highlight:[]">
+      
+                  .bl_imgUnit {
+                    margin: 0 0 20px 0;
+                    border: 1px solid #ccc;
+                    text-align: center;
+                    &gt; .bl_imgBlock {
+                      display: inline-block;
+                      margin: 0 2% 0 0;
+                      &amp;:last-child {
+                        margin-right: 0;
+                      }
+                    }
+                  }
+                  .bl_imgUnit__col2 {
+                    &gt; .bl_imgBlock {
+                      width: 47%;
+                    }
+                  }
+                  .bl_imgUnit__col3 {
+                    &gt; .bl_imgBlock {
+                      width: 30%;
+                    }
+                  }
+    </pre>
+  </div>
+  <!-- /.bl_codeBlock -->
+
+              </section>
+              <!-- /.bl_sectBlock5 -->
+              <p class="bl_sectBlock5_txt">
+                極端な例を示すと、これらをメインエリア・サイドエリアそれぞれに移植するとこのような形になります。
+              </p>
+              <iframe class="el_iframe js_iframe" src="/sample/blockModule4.html"></iframe>
+            </section>
+            <!-- /.bl_sectBlock4 -->
+
+            <p class="el_sectTxt">
+              以上のようにブロックモジュールというのは非常に柔軟で、パワフルにコード内を駆け回ることができます。<br>
+              ただし、その高い移植性を維持するためには高次からのネストとという少し特殊なテクニックが必要で、慣れないうちは苦労するでしょう。<br>
+              さらに複雑なブロックモジュールの移植については、下部に<a href="#advance_moduleNest">Advance Case</a>としてまとめたので、そちらをご参照ください。
+            </p>
+            <p class="el_sectTxt">
+              また下記に、ブロックモジュールを命名する際に役立つ粒度の指針を提供します。<br>PRECSSにおいてブロックモジュールは非常に重要な役割を担うため、これらの語を省略することは推奨しません。<br>
+              必ずしもこれらの名前を含まなければならない訳ではありませんが、これらを参考にすることは、あなたがブロックモジュールを自在に操ることを強力に手助けしてくれるでしょう（現実として、Unit以上の大きさを使用することはあまり無いでしょう）。
+            </p>
+
+            <section class="bl_sectBlock4">
+              <h5 class="el_ttl4">ブロックモジュールにおける概念・命名の粒度</h5>
+              <ul class="bl_simpleList">
+                <li>Block - ブロックモジュールの基本単位。そのモジュール特有の複数の子要素や、エレメントモジュールを含む</li>
+                <li>Unit - Blockの集まり</li>
+                <li>Box - Unitの集まり</li>
+                <li>Container - Boxの集まり</li>
+              </ul>
+            </section>
+            <!-- /.bl_sectBlock4 -->
+          </section>
+          <!-- /.bl_sectBlock3 -->
+
+          <section class="bl_sectBlock3">
+            <h4 class="el_ttl3">3-2.エレメントモジュール</h4>
+            <p class="el_sectTxt">
+              <em class="el_note2">接頭辞：el_</em>
+            </p>
+            <p class="el_sectTxt">
+              elはelementの略です。ボタンやラベル、見出し等の最小単位のモジュールで、単体で持ち運ぶことが可能です。<br>
+              命名は<em class="el_caution">極力汎用的なもの</em>を推奨します。これはどのようなものがコンテンツとして入ったとしても、名前と内容が乖離しないための措置です。<br>
+              <span class="el_note">※ただしサイト内においてスタイルと命名がセマンティックに一致する場合は、その限りではありません（商品やブランドのラベルとテーマカラーが紐付いている場合など）。</span>
+            </p>
+            <p class="el_sectTxt">
+              類似するスタイルのエレメントモジュールが複数存在する場合は、OOCSSにおけるストラクチャとスキンの考え方を使用します。<br>
+              個別のスキンは後述するモディファイアで実装します。
+            </p>
+
+            <iframe class="el_iframe js_iframe" src="/sample/elementModule.html"></iframe>
+            
+            
+  <div class="bl_codeBlock">
+    <em class="bl_codeBlock_ttl">Not recommended(HTML)</em>
+    <pre class="brush:html; class-name:'light'; highlight:[1,4,5,11,12]">
+      
+              &lt;!-- 名前が汎用的でない --&gt;
+              &lt;div class=&#34;bl_sectBlock&#34;&gt;
+                &lt;h2 class=&#34;bl_sectBlock_ttl&#34;&gt;.bl_sectBlock
+                  &lt;span class=&#34;el_label el_label__news&#34;&gt;News&lt;/span&gt;
+                  &lt;span class=&#34;el_label el_label__blog&#34;&gt;Blog&lt;/span&gt;
+                &lt;/h2&gt;
+                ...
+              &lt;/div&gt;
+
+              &lt;p class=&#34;hp_tac&#34;&gt;
+                &lt;a href=&#34;&#34; class=&#34;el_btn el_btn__cancel&#34;&gt;Cancel&lt;/a&gt;
+                &lt;a href=&#34;&#34; class=&#34;el_btn el_btn__submit&#34;&gt;Submit&lt;/a&gt;
+              &lt;/p&gt;
+    </pre>
+  </div>
+  <!-- /.bl_codeBlock -->
+
+            
+            
+  <div class="bl_codeBlock">
+    <em class="bl_codeBlock_ttl">Recommended(HTML)</em>
+    <pre class="brush:html; class-name:''; highlight:[3,4,10,11]">
+      
+              &lt;div class=&#34;bl_sectBlock&#34;&gt;
+                &lt;h2 class=&#34;bl_sectBlock_ttl&#34;&gt;.bl_sectBlock
+                  &lt;span class=&#34;el_label el_label__red&#34;&gt;News&lt;/span&gt;
+                  &lt;span class=&#34;el_label el_label__blue&#34;&gt;Blog&lt;/span&gt;
+                &lt;/h2&gt;
+                ...
+              &lt;/div&gt;
+
+              &lt;p class=&#34;hp_tac&#34;&gt;
+                &lt;a href=&#34;&#34; class=&#34;el_btn el_btn__blue&#34;&gt;Cancel&lt;/a&gt;
+                &lt;a href=&#34;&#34; class=&#34;el_btn el_btn__orange&#34;&gt;Submit&lt;/a&gt;
+              &lt;/p&gt;
+    </pre>
+  </div>
+  <!-- /.bl_codeBlock -->
+
+            
+            
+  <div class="bl_codeBlock">
+    <em class="bl_codeBlock_ttl">Recommended(CSS)</em>
+    <pre class="brush:css; class-name:''; highlight:[]">
+      
+              .el_label {
+                display: inline-block;
+                padding: .2em .5em;
+                color: #fff;
+                &amp;.el_label__red {
+                  background-color: #de5b5b;
+                }
+                &amp;.el_label__blue {
+                  background-color: #308EDE;
+                }
+              }
+
+              .el_btn {
+                display: inline-block;
+                max-width: 200px;
+                padding: .5em 1em;
+                margin-bottom: 20px;
+                border-radius: 5px;
+                color: #fff;
+                text-align: center;
+                &amp;.el_btn__orange {
+                  background-color: #E18700;
+                  box-shadow: 0 3px 0 #B85F29;
+                }
+                &amp;.el_btn__blue {
+                  background-color: #308EDE;
+                  box-shadow: 0 3px 0 #2572B1;
+                }
+              }
+
+              .hp_tac {
+                text-align: center !important;
+              }
+    </pre>
+  </div>
+  <!-- /.bl_codeBlock -->
+
+
+            <section class="bl_sectBlock4">
+            <h5 class="el_ttl4">レイアウトについて</h5>
+              <p class="el_sectTxt">
+                移植性の維持のため、ブロックモジュールと同じく<em class="el_caution">エレメントモジュール自体にレイアウトのためのスタイルを当てることは推奨しません</em>。<br>
+                移植先のモジュールからのネストか、もしくは上記の<span class="el_inlineCode">.hp_tac</span>のように何らかの親要素を使用するのが理想です。（<span class="el_inlineCode">.hp_</span>については次のヘルパーセクションで解説します）<br>
+                ただし、ブロックモジュールに比べエレメントモジュールはサイト全体でバリエーションに限りがあることが多いため、widthの直接指定、及びモディファイアでサイズのパターンを作成することは十分許容します。<br>
+                ただし<span class="el_inlineCode">__w250(px)</span>と数値を固定すると、レスポンシブ・ウェブデザインを採用しSPビューになった際に、モディファイアの数値と実際の大きさに矛盾が発生すると<em class="el_caution">破綻への第一歩</em>となることは留意しておいてください。<br>
+                状況にもよりますが、可能であれば<span class="el_inlineCode">inline-block</span>を使用し大きさが可変するようにしておくと応用が効くでしょう。<br>
+                もちろん移植先からのネスト時に都度widthを調整することも可能で、名前に数値が入らないので破綻のリスクも軽減します。
+              </p>
+              <iframe class="el_iframe js_iframe" src="/sample/elementModule2.html"></iframe>
+              
+              
+  <div class="bl_codeBlock">
+    <em class="bl_codeBlock_ttl">Recommended(HTML)</em>
+    <pre class="brush:html; class-name:''; highlight:[2,3,7,8]">
+      
+                &lt;header class=&#34;ly_header cf&#34;&gt;
+                  &lt;!-- 移植先からのネスト --&gt;
+                  &lt;a href=&#34;&#34; class=&#34;el_btn el_btn__orange&#34;&gt;.el_btn__orange&lt;br&gt;(nested)&lt;/a&gt;
+                &lt;/header&gt;
+
+                &lt;div class=&#34;ly_main&#34;&gt;
+                  &lt;!-- モディファイア --&gt;
+                  &lt;a href=&#34;&#34; class=&#34;el_btn el_btn__w100p el_btn__orange&#34;&gt;.el_btn__w100p&lt;/a&gt;
+                &lt;/div&gt;
+    </pre>
+  </div>
+  <!-- /.bl_codeBlock -->
+
+
+              
+              
+  <div class="bl_codeBlock">
+    <em class="bl_codeBlock_ttl">Recommended(CSS)</em>
+    <pre class="brush:css; class-name:''; highlight:[]">
+      
+                .el_btn {
+                  //移植先からのネスト
+                  .ly_header &gt; &amp; {
+                    float: right;
+                    margin: 0 20px 0 0;
+                  }
+                  //モディファイア
+                  &amp;.el_btn__w100p {
+                    width: 100%;
+                    max-width: 100%;
+                  }
+                }
+    </pre>
+  </div>
+  <!-- /.bl_codeBlock -->
+
+            </section>
+            <!-- /.bl_sectBlock4 -->
+          </section>
+          <!-- /.bl_sectBlock3 -->
+
+          <section class="bl_sectBlock3">
+            <h4 class="el_ttl3">3-3.モディファイア</h4>
+            <p class="el_sectTxt">
+              既に何度か言及していますが、
+            </p>
+            <ul class="bl_simpleList">
+              <li>見た目が変わる</li>
+              <li>大きさが変わる（主にエレメントモジュール、ブロックモジュールの子要素が対象）</li>
+              <li>一定の規則に従ってスタイルが変わる（カラム等）</li>
+            </ul>
+            <p class="el_sectTxt">
+              場合はモディファイアによる上書きをPRECSSでは推奨します。<br>
+              多くはモジュールグループにおいて使用されますが、状況によってはレイアウトグループ等に使用することももちろん可能です。<br>
+              注意点としてモディファイアでスタイルを上書きする際は、<em class="el_caution">基本的に複数クラスで上書きし、詳細度を高めます。</em>「スタイルを上書きする」ということは意図的なアクションであり、であればCSSの読み込み順でスタイルに変化が出てしまうのは好ましくありません。
+            </p>
+            <section class="bl_sectBlock4"><h5 class="el_ttl4">エレメントモジュールの例</h5>
+              
+              
+  <div class="bl_codeBlock">
+    <em class="bl_codeBlock_ttl">Not recommended</em>
+    <pre class="brush:css; class-name:'light'; highlight:[]">
+      
+                  .el_btn__orange {
+                    background-color: orange;
+                  }
+                  .el_btn {
+                    background-color: white;
+                  }
+                  //適用されるカラー：white
+                  //何らかの都合でスタイルの読み込み順が変わったとき、モディファイアが機能しなくなってしまう
+    </pre>
+  </div>
+  <!-- /.bl_codeBlock -->
+
+              
+              
+  <div class="bl_codeBlock">
+    <em class="bl_codeBlock_ttl">Recommended</em>
+    <pre class="brush:css; class-name:''; highlight:[]">
+      
+                  .el_btn {
+                    background-color: white;
+                  }
+                  .el_btn.el_btn__orange {
+                    background-color: orange;
+                  }
+    </pre>
+  </div>
+  <!-- /.bl_codeBlock -->
+
+            </section>
+            <!-- /.bl_sectBlock4 -->
+
+            <section class="bl_sectBlock4">
+              <h5 class="el_ttl4">ブロックモジュールの例</h5>
+              <p class="el_sectTxt">
+                ブロックモジュールにおいて子要素にモディファイアによる変更を適用する際、
+              </p>
+              <ul class="bl_simpleList">
+                <li>特定の子要素のみにモディファイアを適用し、スタイルを上書きする</li>
+                <li>ブロックモジュール自体にモディファイアを適用し、モディファイアからのネストで子要素のスタイルを上書きする</li>
+              </ul>
+              <p class="el_sectTxt">
+                の2通りの方法があげられます。<br>
+                前者の場合はセオリー通り複数クラス指定をすることにより、後者の場合はモディファイアからのネストで子要素を指定することにより詳細度を高めます。
+              </p>
+              <iframe class="el_iframe js_iframe" src="/sample/modifier.html"></iframe>
+              
+              
+  <div class="bl_codeBlock">
+    <em class="bl_codeBlock_ttl">HTML</em>
+    <pre class="brush:html; class-name:''; highlight:[11,12,17,18]">
+      
+                &lt;div class=&#34;bl_sectBlock&#34;&gt;
+                  &lt;h2 class=&#34;bl_sectBlock_ttl&#34;&gt;.bl_sectBlock&lt;/h2&gt;
+
+                  &lt;p class=&#34;bl_sectBlock_txt cf&#34;&gt;
+                    &lt;!-- 元のモジュール --&gt;
+                    &lt;img class=&#34;bl_sectBlock_txt_img&#34;&gt;
+                    Lorem ipsum...
+                  &lt;/p&gt;
+
+                  &lt;p class=&#34;bl_sectBlock_txt cf&#34;&gt;
+                    &lt;!-- 一部のみの挙動が変わる例 --&gt;
+                    &lt;img class=&#34;bl_sectBlock_txt_img bl_sectBlock_txt_img__rev&#34;&gt;
+                    Lorem ipsum...
+                  &lt;/p&gt;
+                &lt;/div&gt;
+
+                &lt;!-- 子要素複数に対してスタイルを上書きする例 --&gt;
+                &lt;div class=&#34;bl_sectBlock bl_sectBlock__sml&#34;&gt;
+                  &lt;h3 class=&#34;bl_sectBlock_ttl&#34;&gt;.bl_sectBlock__sml&lt;/h3&gt;
+                  &lt;p class=&#34;bl_sectBlock_txt cf&#34;&gt;
+                    &lt;img class=&#34;bl_sectBlock_txt_img&#34;&gt;
+                    Lorem ipsum...
+                  &lt;/p&gt;
+                &lt;/div&gt;
+    </pre>
+  </div>
+  <!-- /.bl_codeBlock -->
+
+              
+              
+  <div class="bl_codeBlock">
+    <em class="bl_codeBlock_ttl">CSS</em>
+    <pre class="brush:css; class-name:''; highlight:[]">
+      
+                //元のモジュール
+                .bl_sectBlock_txt_img {
+                  float: left;
+                  margin: 0 10px 10px 0;
+                  //一部のみの挙動が変わる例
+                  &amp;.bl_sectBlock_txt_img__rev {
+                    float: right;
+                    margin: 0 0 10px 10px;
+                  }
+                }
+
+                //子要素複数に対してスタイルを上書きする例
+                .bl_sectBlock {
+                  &amp;.bl_sectBlock__sml {
+                    &gt; .bl_sectBlock_ttl {
+                      font-size: .8em;
+                    }
+                    &gt; .bl_sectBlock_txt {
+                      font-size: .5em;
+                    }
+                    .bl_sectBlock_txt_img {
+                      width: 5%;
+                    }
+                  }
+                }
+    </pre>
+  </div>
+  <!-- /.bl_codeBlock -->
+
+              <p class="el_sectTxt">
+                繰り返しになりますが、ブロックモジュールそれ自体の大きさの変化に対して、モディファイアを付加することはあまり推奨しません。なぜなら大きさを固定にしてしまった場合、「その大きさが入るのか」というのは移植先の大きさ（言い換えればコンテキスト）に左右され、ブロックモジュールはエレメントモジュールに比べバリエーションが不定になりがちだからです。<br>
+                ブロックモジュールは大きめに使われることが多いので、レスポンシブ時の破綻のリスクも、エレメントモジュールに比べ当然高いです。<br>
+                ブロックモジュールが他所のモジュール内にネストされる場合は、モディファイアではなく移植先のモジュールからのネストでスタイルを上書きすることを推奨します。（詳しくは<a href="#advance">Advance Case</a>にて解説しています）<br>
+              </p>
+            </section>
+            <!-- /.bl_sectBlock4 -->
+          </section>
+          <!-- /.bl_sectBlock3 -->
+        </section>
+        <!-- /.bl_sectBlock2 -->
+
+        <section class="bl_sectBlock2">
+          <h3 class="el_ttl2">4.ヘルパー</h3>
+          <p class="el_sectTxt">
+            <em class="el_note2">接頭辞：hp_</em>
+          </p>
+          <p class="el_sectTxt">
+            hpはhelperの略です。基本的に1つのスタイルのみで、意図的な上書きのため<span class="el_inlineCode">!important</span>を付加します。命名規則に関しては、<a href="http://docs.emmet.io/cheat-sheet/" target="_blank">Emmetのチートシート</a>に準ずることを推奨し、その他の規則として
+          </p>
+          <ul class="bl_simpleList">
+            <li>px以外の単位の場合は分かりやすい頭文字で表現</li>
+            <li>小数点はアンダースコアで表現</li>
+            <li>ネガティブな値はショートハンドを大文字で表現</li>
+            <li>ショートハンドの後に文字列が続く場合はキャメルケースで表現</li>
+          </ul>
+          <p class="el_sectTxt">
+            とします（これらの規則はモディファイアの命名にも概ね有効です）。<br>
+            ただし1つの要素に対しヘルパーを多用し過ぎると、style属性を使用していることと変わりが無くなってしまうので、<em class="el_caution">ヘルパーが3つ以上になった場合はモジュール化を検討するべきでしょう</em>。
+          </p>
+          <p class="el_sectTxt">
+            基本的に1スタイルのみのため、<span class="el_inlineCode">outputStyle:compact</span>を許容します。
+            また挙動が限定的でかつ明確な場合のみ、1つ以上のスタイルであってもヘルパーで処理することが可能です。
+          </p>
+          
+          
+  <div class="bl_codeBlock">
+    <em class="bl_codeBlock_ttl">CSS</em>
+    <pre class="brush:css; class-name:''; highlight:[]">
+      
+              .hp_db { display: block !important; }
+              .hp_tac { text-align: center !important; }
+              .hp_w400 { width: 400px !important; }
+              .hp_w50p { width: 50% !important; }
+              .hp_lh1_5 { line-height: 1.5 !important; }
+              .hp_MT1e { margin-top: -1em !important; }
+              .hp_bgcWhite { background-color: #fff !important; }
+
+              //1つ以上のスタイルの例
+              .hp_centering {
+                display: block !important;
+                margin-left: auto !important;
+                margin-right: auto !important;
+              }
+    </pre>
+  </div>
+  <!-- /.bl_codeBlock -->
+
+          <section class="bl_sectBlock3">
+            <h5 class="el_ttl3">clearfixについて</h5>
+            <p class="el_sectTxt">
+              PRECSSではfloatの解除にclearfixを推奨します。これは、floatの解除のためだけに本来の目的とは関係の無いスタイルを記述することを忌避するためです。<br>
+              特にoverflowは本来の目的で使われる場合もあり、CSSコードだけ見たときに、それがfloatの解除のためなのか、本来の目的のためなのかわからない、といった状況は好ましくありません。<br>
+              またPRECSSのルールに当てはめればclearfixもヘルパーとして定義することが可能ですが、clearfixはそれ自体が充分に一般的であるため、接頭辞を付ける必要はありません。
+            </p>
+          </section>
+          <!-- /.bl_sectBlock3 -->
+        </section>
+        <!-- /.bl_sectBlock2 -->
+
+        <section class="bl_sectBlock2">
+          <h3 class="el_ttl2">5.プログラム</h3>
+          <p class="el_sectTxt">
+            PRECSSではJavaScript等のプログラムで要素にタッチする際、極力専用のクラスを付加しCSS用のクラスとは分離することを推奨します。
+          </p>
+          <p class="el_sectTxt">
+            <em class="el_note2">接頭辞：js_</em>
+          </p>
+          <p class="el_sectTxt">
+            JavaScriptにて要素を取得するためのクラスです。
+          </p>
+          <p class="el_sectTxt">
+            <em class="el_note2">接頭辞：is_</em>
+          </p>
+          <p class="el_sectTxt">
+            要素の状態を管理するためのクラスです。上書きはモディファイアの場合と同じく複数クラスで行う他、必ず適用されなければならないスタイルであるため、<span class="el_inlineCode">!important</span>の使用も許容します。<br>
+            状態の命名は<span class="el_inlineCode">is_active</span>とシンプルに記述することが可能ですが、他の箇所にも影響を及ぼさないよう<em class="el_caution">必ず複数クラスでスタイルを適用</em>する必要があります。<br>
+            <span class="el_note">※対応ブラウザや状況によっては、JavaScript用のクラスではなく、カスタムデータ属性を付加することも推奨します。</span>
+          </p>
+          
+  <div class="bl_codeBlock">
+    <em class="bl_codeBlock_ttl">HTML</em>
+    <pre class="brush:html; class-name:''; highlight:[]">
+      
+              &lt;div class=&#34;bl_sectBlock js_accordion&#34;&gt;
+                &lt;h3 class=&#34;bl_sectBlock_ttl js_accordion_head&#34;&gt;Title Here&lt;/h3&gt;
+                &lt;p class=&#34;bl_sectBlock_txt js_accordion_body is_active&#34;&gt;
+                  Lorem ipsum...
+                &lt;/p&gt;
+              &lt;/div&gt;
+    </pre>
+  </div>
+  <!-- /.bl_codeBlock -->
+
+          
+          
+  <div class="bl_codeBlock">
+    <em class="bl_codeBlock_ttl">Not recommended(CSS)</em>
+    <pre class="brush:css; class-name:'light'; highlight:[5]">
+      
+              .js_accordion_body {
+                display: none;
+              }
+              //他の箇所にまで影響を及ぼす可能性がある
+              .is_active {
+                display: block;
+              }
+    </pre>
+  </div>
+  <!-- /.bl_codeBlock -->
+
+          
+          
+  <div class="bl_codeBlock">
+    <em class="bl_codeBlock_ttl">Recommended(CSS)</em>
+    <pre class="brush:css; class-name:''; highlight:[4]">
+      
+              .js_accordion_body {
+                display: none;
+              }
+              .js_accordion_body.is_active {
+                display: block;
+              }
+    </pre>
+  </div>
+  <!-- /.bl_codeBlock -->
+
+        </section>
+        <!-- /.bl_sectBlock2 -->
+
+        <section class="bl_sectBlock2">
+          <h3 class="el_ttl2">6.オリジナル</h3>
+          <p class="el_sectTxt">
+            その他、サイトの構築思想に応じて柔軟に接頭辞を追加できるのがPRECSSの特徴です。 <br>例えばオリジナルのグリッドレイアウトを構築する場合、gridの略として<span class="el_inlineCode">.gr_4</span>、<span class="el_inlineCode">gr_6</span>やcolumnの略として<span class="el_inlineCode">.cl_4</span>、<span class="el_inlineCode">cl_6</span>といった接頭辞を追加することができます。<br>
+            スマートフォンのみ有効なクラスは<span class="el_inlineCode">.sp_**</span>、タブレットのみ有効なクラスは<span class="el_inlineCode">.tb_**</span>とするのもいいでしょう。<br>
+            一定の法則に従っている限り、PRECSSはどんなものでも臆することなく受け入れます。
+          </p>
+        </section>
+        <!-- /.bl_sectBlock2 -->
+      </section>
+      <!-- /.bl_sectBlock -->
+    </div>
+    <!-- /.ly_main_inner -->
+  </div>
+  <!-- /.ly_main -->
+
+  <div class="bl_sectBlockCalm">
+    <p class="bl_sectBlockCalm_txt">Advance Case</p>
+  </div>
+  <!-- /.bl_sectBlockCalm -->
+
+  <div class="ly_main">
+    <div class="ly_main_inner">
+      <section class="bl_sectBlock">
+        <h2 class="el_ttl" id="advance_moduleNest">モジュールが他のモジュールにネストされる場合</h2>
+        <p class="el_sectTxt">
+          PRECSSでは一つのブロックモジュール内に他のブロックモジュール、またはエレメントモジュールがネストされることがあります。これは、モジュールが「持ち運び可能なもの」である思想の下の挙動です。<br>
+          その際に直面する、主にレイアウトの問題について、幾つか指針を示します。<br>
+          現在構築中のモジュールをA、既に他所で構築済みで、Aに移植したいモジュールをBとしましょう。<br>
+          基本的な原則は、以下の2つのみです。
+        </p>
+        <ul class="bl_simpleList">
+          <li>Bのレイアウトは、Aからのネストで制御する<br>
+          (子セレクタ指定が好ましいですが、状況により子孫セレクタも許容します)</li>
+          <li>B内の子要素は、Aからのネストで制御してはならない</li>
+        </ul>
+        <iframe class="el_iframe js_iframe" src="/sample/advance.html"></iframe>
+        
+        
+  <div class="bl_codeBlock">
+    <em class="bl_codeBlock_ttl">HTML</em>
+    <pre class="brush:html; class-name:''; highlight:[16,17,18,19]">
+      
+          &lt;div class=&#34;ly_side&#34;&gt;
+            &lt;!-- Bモジュール --&gt;
+            &lt;div class=&#34;bl_imgBlock&#34;&gt;
+              &lt;h3 class=&#34;bl_imgBlock_ttl&#34;&gt;.bl_imgBlock&lt;/h3&gt;
+              &lt;p class=&#34;bl_imgBlock_img&#34;&gt;&lt;img src=&#34;//goo.gl/15naui&#34;&gt;&lt;/p&gt;
+              &lt;p class=&#34;bl_imgBlock_txt&#34;&gt;
+                Lorem ipsum...
+              &lt;/p&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+
+          &lt;div class=&#34;ly_main&#34;&gt;
+            &lt;!-- Aモジュール --&gt;
+            &lt;div class=&#34;bl_sectBlock cf&#34;&gt;
+              &lt;h2 class=&#34;bl_sectBlock_ttl&#34;&gt;.bl_sectBlock&lt;/h2&gt;
+              &lt;!-- Bモジュールの移植 --&gt;
+              &lt;div class=&#34;bl_imgBlock&#34;&gt;
+                ...
+              &lt;/div&gt;
+              &lt;p class=&#34;bl_sectBlock_txt&#34;&gt;
+                Lorem ipsum...
+              &lt;/p&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+    </pre>
+  </div>
+  <!-- /.bl_codeBlock -->
+
+        
+        
+  <div class="bl_codeBlock">
+    <em class="bl_codeBlock_ttl">CSS</em>
+    <pre class="brush:css; class-name:''; highlight:[]">
+      
+          //Bモジュール
+          .bl_imgBlock{
+            margin: 0 0 20px 0;
+          }
+
+          //BモジュールをAモジュールに移植
+          .bl_sectBlock{
+            &gt; .bl_imgBlock{
+              width: 25%;
+              float: left;
+              margin: 0 10px 10px 0;
+            }
+          }
+    </pre>
+  </div>
+  <!-- /.bl_codeBlock -->
+
+
+        <p class="el_sectTxt">
+          2つ目の「B内の子要素は、Aからのネストで制御してはならない」について、もう詳しく解説します。
+        </p>
+        <p class="el_sectTxt">
+          BをAに移植した際にBの子要素に何らかの変更が必要な場合、<span class="el_inlineCode">A > B > 子要素</span>という形でスタイルを上書きしてはいけません。<br>
+          これはモジュールブロックそれ自体が、<em class="el_caution">単独で完結する1つの塊</em>という思想であるからです。塊それ自体のレイアウトは移植先モジュールのコンテキストにより挙動を変えるのは可能ですが、その子要素までもがコンテキストに影響されるのは好ましくありません。<br>
+          誤解を恐れずに言えば、AモジュールからBモジュールそれ自体は制御可能だが、Bモジュールの内部については隠蔽されるべき、という感覚です。<br>
+          ブロックモジュール内の変更はあくまで、そのブロックモジュール内で完結すべきということから、<em class="el_caution">ブロックモジュール内はそのブロックモジュール以外からの変更を受けない聖域</em>となっています。
+        </p>
+        <p class="el_sectTxt">
+          現実としてAモジュールへ組み込みの際にBモジュール内に変更が必要な場合は、Bモジュールにモディファイアを付加することで処理します。<br>
+          ここでは、BモジュールがAモジュールに移植された際に、コンテンツが全体的に小さくなる例を示します。
+        </p>
+        <iframe class="el_iframe js_iframe" src="/sample/advance2.html"></iframe>
+        
+        
+  <div class="bl_codeBlock">
+    <em class="bl_codeBlock_ttl">HTML</em>
+    <pre class="brush:html; class-name:''; highlight:[5,6,7,8]">
+      
+          &lt;div class=&#34;ly_main&#34;&gt;
+            &lt;!-- Aモジュール --&gt;
+            &lt;div class=&#34;bl_sectBlock cf&#34;&gt;
+              &lt;h2 class=&#34;bl_sectBlock_ttl&#34;&gt;.bl_sectBlock&lt;/h2&gt;
+              &lt;!-- Bモジュールの移植、bl_imgBlock__smlモディファイアの付加 --&gt;
+              &lt;div class=&#34;bl_imgBlock bl_imgBlock__sml&#34;&gt;
+                ...
+              &lt;/div&gt;
+              &lt;p class=&#34;bl_sectBlock_txt&#34;&gt;
+                Lorem ipsum...
+              &lt;/p&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+    </pre>
+  </div>
+  <!-- /.bl_codeBlock -->
+
+        
+        
+  <div class="bl_codeBlock">
+    <em class="bl_codeBlock_ttl">CSS</em>
+    <pre class="brush:css; class-name:''; highlight:[]">
+      
+          //Bモジュールにbl_imgBlock__smlモディファイアの付加
+          .bl_imgBlock{
+            &amp;.bl_imgBlock__sml{
+              &gt; .bl_imgBlock_ttl{
+                margin: 0 0 5px 0;
+                font-size: .8em;
+              }
+              &gt; .bl_imgBlock_img{
+                margin: 0 0 5px 0;
+                &gt; img{
+                  max-width: 80px;
+                }
+              }
+              .bl_imgBlock_txt{
+                margin: 0 0 10px 0;
+                font-size: .8em;
+              }
+            }
+          }
+    </pre>
+  </div>
+  <!-- /.bl_codeBlock -->
+
+        <p class="el_sectTxt">
+          このように記述することで、ブロックモジュールの聖域を守りメンテナンス範囲の明確なコードを維持するだけでなく、他所へ移植した際もコンテキストに関わらず同じ状態を再現出来る、汎用性の高いモジュールになります。
+        </p>
+
+        <section class="bl_sectBlock2">
+          <h3 class="el_ttl2">Aモジュールの子要素に変更が生じる場合</h3>
+          <p class="el_sectTxt">
+            BモジュールがAモジュールに移植された際、場合によってはAモジュールの子要素に変更が生じることもあるでしょう。<br>
+            その際のアプローチとして、考えられるパターンを3つ例示します。
+          </p>
+        <ul class="bl_simpleList">
+          <li>Aの該当子要素モジュールに直接モディファイアを付加しスタイルを変更する</li>
+          <li>Aモジュールにモディファイアを付加し、ネスト指定でスタイルを変更する</li>
+          <li>元のAモジュールから分離した、Aモジュールの類似であるA2モジュールを作成する</li>
+        </ul>
+        <p class="el_sectTxt">
+          どこまで拡張性を見据えるかにもよりますが、先に結論を言ってしまうと推奨するのは3つ目の<em class="el_caution">「類似であるA2モジュールを作成する」</em>です。<br>
+          <span class="el_inlineCode">bl_imgBlock</span>と<span class="el_inlineCode">bl_sectBlock_txt</span>が左右ほぼ均等に横並び表示されるパターンを例に、それぞれ解説します。
+        </p>
+        <iframe class="el_iframe js_iframe" src="/sample/advance3.html"></iframe>
+        <section class="bl_sectBlock3">
+          <h4 class="el_ttl3">Aの該当子要素モジュールに直接モディファイアを付加しスタイルを変更する</h4>
+          
+          
+  <div class="bl_codeBlock">
+    <em class="bl_codeBlock_ttl">HTML</em>
+    <pre class="brush:html; class-name:''; highlight:[6,7]">
+      
+            &lt;div class=&#34;bl_sectBlock cf&#34;&gt;
+              &lt;h2 class=&#34;bl_sectBlock_ttl&#34;&gt;.bl_sectBlock&lt;/h2&gt;
+              &lt;div class=&#34;bl_imgBlock&#34;&gt;
+                ...
+              &lt;/div&gt;
+              &lt;!-- 該当子要素モジュールにモディファイアの付加 --&gt;
+              &lt;p class=&#34;bl_sectBlock_txt bl_sectBlock_txt__r49p&#34;&gt;
+                ...
+              &lt;/p&gt;
+            &lt;/div&gt;
+    </pre>
+  </div>
+  <!-- /.bl_codeBlock -->
+
+          
+          
+  <div class="bl_codeBlock">
+    <em class="bl_codeBlock_ttl">CSS</em>
+    <pre class="brush:css; class-name:''; highlight:[8]">
+      
+              .bl_sectBlock{
+                &gt; .bl_imgBlock{
+                  width: 49%;
+                  float: left;
+                }
+              }
+              .bl_sectBlock_txt{
+                &amp;.bl_sectBlock_txt__r49p{
+                  float: right;
+                  width: 49%;
+                }
+              }
+    </pre>
+  </div>
+  <!-- /.bl_codeBlock -->
+
+          <p class="el_sectTxt">
+            このパターンは1番手っ取り早いですが、モディファイアを付加した該当モジュールしか調整出来ず、他のモジュールも調整が必要になった場合はいちいちモディファイアを付加しなければならないため、若干拡張性に欠けます。
+          </p>
+        </section>
+        <!-- /.bl_sectBlock3 -->
+
+        <section class="bl_sectBlock3">
+          <h4 class="el_ttl3">Aモジュールにモディファイアを付加し、ネスト指定でスタイルを変更する</h4>
+          
+          
+  <div class="bl_codeBlock">
+    <em class="bl_codeBlock_ttl">HTML</em>
+    <pre class="brush:html; class-name:''; highlight:[1,2]">
+      
+            &lt;!-- Aモジュールにモディファイアの付加 --&gt;
+            &lt;div class=&#34;bl_sectBlock bl_sectBlock__hasImgBlock cf&#34;&gt;
+              &lt;h2 class=&#34;bl_sectBlock_ttl&#34;&gt;.bl_sectBlock&lt;/h2&gt;
+              &lt;div class=&#34;bl_imgBlock&#34;&gt;
+                ...
+              &lt;/div&gt;
+              &lt;p class=&#34;bl_sectBlock_txt&#34;&gt;
+                ...
+              &lt;/p&gt;
+            &lt;/div&gt;
+    </pre>
+  </div>
+  <!-- /.bl_codeBlock -->
+
+          
+          
+  <div class="bl_codeBlock">
+    <em class="bl_codeBlock_ttl">CSS</em>
+    <pre class="brush:css; class-name:''; highlight:[]">
+      
+            .bl_sectBlock.bl_sectBlock__hasImgBlock{
+              &gt; .bl_imgBlock{
+                width: 49%;
+                float: left;
+              }
+              &gt; .bl_sectBlock_txt{
+                float: right;
+                width: 49%;
+              }
+            }
+    </pre>
+  </div>
+  <!-- /.bl_codeBlock -->
+
+          <p class="el_sectTxt">
+            前述と比較し、こちらのパターンは他の子要素にも調整が必要になった場合でもCSSを調整するだけで済みます。<br>
+            モディファイア名は、拡張性を考慮すると子要素の状態に名前が左右されない<span class="el_inlineCode">bl_sectBlock__hasImgBlock</span>とすると良いでしょう。<br>
+            ただし今回はネストしている別ブロックモジュールが一つなのでこれで十分ですが、仮にAモジュールにネストされるモジュールが増える、例えばBに加えCモジュールもAモジュールに組み込まれると、モディファイア名が冗長になることが予想されます。<br>
+          </p>
+          <p class="el_sectTxt">
+            また<span class="el_inlineCode">**__has**</span>というモディファイア名にした場合、Bモジュールに対するスタイル指定も上記のCSSの例のようにモディファイアからのネストにした方が管理上健全ですが、仮に初めに例に挙げた「Aの子要素に影響を与えない、Bモジュールのネスト」と共存する場合、<em class="el_caution">「どちらもBモジュールを含むのに、片方だけに<span class="el_inlineCode">**__has**</span>モディファイアが付加されている」</em>となり、やはり少なからず論理的に破綻をきたしてしまいます。
+          </p>
+        </section>
+        <!-- /.bl_sectBlock3 -->
+
+        <section class="bl_sectBlock3">
+          <h4 class="el_ttl3">元のAモジュールから分離した、Aモジュールの類似であるA2モジュールを作成する</h4>
+          
+          
+  <div class="bl_codeBlock">
+    <em class="bl_codeBlock_ttl">HTML</em>
+    <pre class="brush:html; class-name:''; highlight:[]">
+      
+              &lt;div class=&#34;bl_sectBlock2 cf&#34;&gt;
+                &lt;h2 class=&#34;bl_sectBlock2_ttl&#34;&gt;.bl_sectBlock2&lt;/h2&gt;
+                &lt;div class=&#34;bl_imgBlock&#34;&gt;
+                  ...
+                &lt;/div&gt;
+                &lt;p class=&#34;bl_sectBlock2_txt&#34;&gt;
+                  ...
+                &lt;/p&gt;
+              &lt;/div&gt;
+    </pre>
+  </div>
+  <!-- /.bl_codeBlock -->
+
+          
+          
+  <div class="bl_codeBlock">
+    <em class="bl_codeBlock_ttl">CSS</em>
+    <pre class="brush:css; class-name:''; highlight:[]">
+      
+              //重複スタイルの一括指定
+              .bl_sectBlock,
+              .bl_sectBlock2 {...}
+              .bl_sectBlock_ttl,
+              .bl_sectBlock2_ttl {...}
+              .bl_sectBlock_txt_img,
+              .bl_sectBlock2_txt_img {...}
+
+              //bl_sectBlock独自の指定
+              .bl_sectBlock_txt {...}
+
+              //bl_sectBlock2独自の指定
+              .bl_sectBlock2_txt {
+                width: 49%;
+                float: right;
+              }
+              .bl_sectBlock2 &gt; .bl_imgBlock {
+                float: left;
+                width: 49%;
+              }
+    </pre>
+  </div>
+  <!-- /.bl_codeBlock -->
+
+          <p class="el_sectTxt">
+            連番を付加し、元のモジュールの亜種として別モジュールを作成するパターンです。 変更が無い箇所にも再度同じスタイルを適用するのが少し手間ですが、元のAモジュールから分離できるため管理性・拡張性はかなり高いでしょう。<br>
+            今回の例ではセレクタをカンマで区切っていますが、CSSプリプロセッサのextendやmixinを使用して管理することももちろん可能です。<br>
+            タイトル部分など、共通部分をどうしても同一クラスで一元管理したいという場合は、エレメントモジュール化するという手もあります。
+          </p>
+        </section>
+        <!-- /.bl_sectBlock3 -->
+        </section>
+        <!-- /.bl_sectBlock2 -->
+      </section>
+      <!-- /.bl_sectBlock -->
+    </div>
+    <!-- /.ly_main_inner -->
+  </div>
+  <!-- /.ly_main -->
+</article>
+
+<footer class="ly_footer">
+  <div class="ly_footer_inner">
+    <p class="el_centerTxt">
+      PRECSS is maintained and funded by assialiholic.<br>
+      Contributors &amp; Transrators wanted!<br>
+      <a href=""><i class="fa fa-github fa-3x" aria-hidden="true"></i></a>
+    </p>
+  </div>
+  <!-- /.ly_footer_inner -->
+</footer>
+
+<script src="http://cdn.jsdelivr.net/jquery/1.8.3/jquery-1.8.3.min.js"></script>
+<script src="/js/scripts.js"></script>
+</body>
+</html>
