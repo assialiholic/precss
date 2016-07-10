@@ -918,7 +918,9 @@ eval(function (p, a, c, k, e, d) {
   $(function(){
     $('.js_matchHeight').matchHeight();
     SyntaxHighlighter.all();
-    $('.js_iframe').iframeAutoHeight();
+    setTimeout(function() {
+        $('.js_iframe').iframeAutoHeight();
+    }, 1000)
   });
 
 })();
