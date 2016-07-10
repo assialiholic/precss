@@ -608,6 +608,52 @@ a:hover > i {
 }
 
 /* ==========================================================================
+   Unique Block
+   ========================================================================== */
+/* SiteRoot
+  ========================================================================== */
+.un_siteRoot_wrapper {
+  position: relative;
+  top: 33vh;
+  text-align: center;
+}
+
+.un_siteRoot {
+  display: inline-block;
+}
+
+.un_siteRoot_logo {
+  width: 100px;
+  margin: 0 auto;
+}
+
+.un_siteRoot_ttl {
+  color: #E13626;
+  font: 100 32px 'Noto Sans Japanese', serif;
+  text-align: center;
+}
+
+.un_siteRoot_link {
+  font-size: 14px;
+  color: #E13626;
+}
+
+.un_siteRoot_link a {
+  display: inline-block;
+  border-bottom: 1px solid transparent;
+  color: #E13626;
+  line-height: 1.2;
+}
+
+.un_siteRoot_link a:hover {
+  border-bottom-color: currentColor;
+}
+
+.un_siteRoot_link .is_deactive {
+  opacity: .35;
+}
+
+/* ==========================================================================
    Element Module
    ========================================================================== */
 /* Title
