@@ -7,103 +7,15 @@ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 ga('create', 'UA-69608967-3', 'auto');
 ga('send', 'pageview');
 
-
-/*--------------------------------------------------------------------------*
- *
- *  SmoothScroll JavaScript Library V2
- *
- *  MIT-style license.
- *
- *  2007-2011 Kazuma Nishihata
- *  http://www.to-r.net
- *
- *--------------------------------------------------------------------------*/
-
-new function() {
-
-    var attr = "data-tor-smoothScroll"; //for html5 , if you can't use html5 , this value change "class"
-    var attrPatt = /noSmooth/;
-    var d = document; //document short cut
-
-    /*
-   *add Event
-    -------------------------------------------------*/
-    function addEvent(elm, listener, fn) {
-        try { // IE
-            elm.addEventListener(listener, fn, false);
-        } catch (e) {
-            elm.attachEvent("on" + listener, function() {
-                fn.apply(elm, arguments)
-            });
-        }
-    }
-
-    /*
-   *Start SmoothScroll
-    -------------------------------------------------*/
-    function SmoothScroll(a) {
-        if (d.getElementById(a.rel.replace(/.*\#/, ""))) {
-            var e = d.getElementById(a.rel.replace(/.*\#/, ""));
-        } else {
-            return;
-        }
-
-        //Move point
-        var end = e.offsetTop
-        var docHeight = d.documentElement.scrollHeight;
-        var winHeight = window.innerHeight || d.documentElement.clientHeight
-        if (docHeight - winHeight < end) {
-            var end = docHeight - winHeight;
-        }
-
-        //Current Point
-        var start = window.pageYOffset || d.documentElement.scrollTop || d.body.scrollTop || 0;
-
-
-        var flag = (end < start) ? "up" : "down";
-
-        function scrollMe(start, end, flag) {
-            setTimeout(
-
-            function() {
-                if (flag == "up" && start >= end) {
-                    start = start - (start - end) / 20 - 1;
-                    window.scrollTo(0, start)
-                    scrollMe(start, end, flag);
-                } else if (flag == "down" && start <= end) {
-                    start = start + (end - start) / 20 + 1;
-                    window.scrollTo(0, start)
-                    scrollMe(start, end, flag);
-                } else {
-                    scrollTo(0, end);
-                }
-                return;
-            }, 10);
-
-        }
-
-        scrollMe(start, end, flag);
-
-    }
-
-    /*
-   *Add SmoothScroll
-    -------------------------------------------------*/
-    addEvent(window, "load", function() {
-        var anchors = d.getElementsByTagName("a");
-        for (var i = 0, len = anchors.length; i < len; i++) {
-            if (!attrPatt.test(anchors[i].getAttribute(attr)) && anchors[i].href.replace(/\#[a-zA-Z0-9_]+/, "") == location.href.replace(/\#[a-zA-Z0-9_]+/, "")) {
-                anchors[i].rel = anchors[i].href;
-                anchors[i].href = "javascript:void(0)";
-                anchors[i].onclick = function() {
-                    SmoothScroll(this)
-                }
-            }
-        }
+$(function () {
+    $('a[href^=#]').click(function(){
+        var href= $(this).attr("href");
+        var target = $(href == "#" || href == "" ? 'html' : href);
+        var position = target.offset().top;
+        $("html, body").animate({scrollTop:position}, 550, "swing");
+        return false;
     });
-
-}
-
+});
 
 /**
  * SyntaxHighlighter
@@ -889,6 +801,50 @@ eval(function (p, a, c, k, e, d) {
 
 (function(){
 
+  $('.js_closeBtn').click(function(){
+    $(this).parents('.js_closeParent').fadeOut(250);
+    return false;
+  });
+
+  var $stickySide = $('.js_stickySide'),
+      $stickyInner = $('.js_stickyInner'),
+      stickyOpValue = $stickyInner.css('opacity'),
+      firstStickFlag = 0;
+
+  $stickyInner.hover(function(){
+    $(this).css({
+      opacity: 1
+    });
+  }, function(){
+    $(this).css({
+      opacity: stickyOpValue
+    });
+  });
+
+  function stickSide() {
+    if(window.pageYOffset >= 1990){
+      $stickySide.addClass('is_fixed')
+      if(!firstStickFlag){
+        $stickyInner.css({
+          opacity: 1
+        });
+        firstStickFlag = 1;
+        setTimeout(function(){
+          $stickyInner.css({
+            opacity: stickyOpValue
+          });
+        }, 800);
+      };
+    }else{
+      firstStickFlag = 0;
+      $stickySide.removeClass('is_fixed');
+    }
+  }
+
+  $(window).scroll(function(){
+    stickSide();
+  });
+
   var setElm = $('.js_split'),
       delaySpeed = 50,
       fadeSpeed = 0;
@@ -916,6 +872,7 @@ eval(function (p, a, c, k, e, d) {
   });
 
   $(function(){
+    stickSide();
     $('.js_matchHeight').matchHeight();
     SyntaxHighlighter.all();
     setTimeout(function() {

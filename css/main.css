@@ -195,6 +195,15 @@ a:hover > i {
   }
 }
 
+/* Sticky
+   ========================================================================== */
+.ly_stickySide {
+  position: absolute;
+  z-index: 5;
+  top: 2005px;
+  left: 0;
+}
+
 /* Footer
    ========================================================================== */
 .ly_footer {
@@ -561,9 +570,60 @@ a:hover > i {
   margin: 0 0 20px 0;
 }
 
-.bl_simpleList > li {
+.bl_simpleList > li > a {
   padding-left: 1em;
   text-indent: -1em;
+}
+
+.bl_simpleList02 {
+  padding: 0 0 0 .5em;
+  margin-bottom: 3px;
+}
+
+.bl_simpleList02 > li {
+  padding-left: 1em;
+  color: inherit;
+  font-size: .9em;
+  line-height: 1;
+  text-indent: -.7em;
+}
+
+.bl_simpleList02 > li:before {
+  content: ' - ';
+  color: inherit;
+}
+
+.bl_simpleList02 > li > a {
+  color: inherit;
+  border-bottom: 1px solid transparent;
+}
+
+.bl_simpleList02 > li > a:hover {
+  border-bottom: 1px solid currentColor;
+}
+
+.bl_utickyList {
+  width: 240px;
+  padding: 10px 20px;
+  background-color: rgba(255, 255, 255, 0.95);
+  border: 1px solid #ddd;
+}
+
+.bl_utickyList > li {
+  color: #aaa;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.bl_utickyList > li > a {
+  display: inline-block;
+  line-height: 1;
+  color: #aaa;
+  border-bottom: 1px solid transparent;
+}
+
+.bl_utickyList > li > a:hover {
+  border-bottom: 1px solid currentColor;
 }
 
 /* Table
@@ -784,6 +844,16 @@ a:hover > i {
   color: #666666;
 }
 
+/* Button
+   ========================================================================== */
+.el_closeBtn {
+  position: absolute;
+  top: 0;
+  right: 10px;
+  color: #aaa;
+  font-size: 1.2em;
+}
+
 /* Frame
    ========================================================================== */
 .el_iframe {
@@ -821,6 +891,10 @@ a:hover > i {
    ========================================================================== */
 .hp_mb0 {
   margin-bottom: 0 !important;
+}
+
+.hp_mb30 {
+  margin-bottom: 30px !important;
 }
 
 .hp_ML1e {
@@ -876,6 +950,52 @@ a:hover > i {
 }
 
 /* ==========================================================================
+   Unique Block
+   ========================================================================== */
+/* SiteRoot
+  ========================================================================== */
+.un_siteRoot_wrapper {
+  position: relative;
+  top: 33vh;
+  text-align: center;
+}
+
+.un_siteRoot {
+  display: inline-block;
+}
+
+.un_siteRoot_logo {
+  width: 100px;
+  margin: 0 auto;
+}
+
+.un_siteRoot_ttl {
+  color: #E13626;
+  font: 100 32px 'Noto Sans Japanese', serif;
+  text-align: center;
+}
+
+.un_siteRoot_link {
+  font-size: 14px;
+  color: #E13626;
+}
+
+.un_siteRoot_link a {
+  display: inline-block;
+  border-bottom: 1px solid transparent;
+  color: #E13626;
+  line-height: 1.2;
+}
+
+.un_siteRoot_link a:hover {
+  border-bottom-color: currentColor;
+}
+
+.un_siteRoot_link .is_deactive {
+  opacity: .35;
+}
+
+/* ==========================================================================
    Smartdevice
    ========================================================================== */
 /* Overflow
@@ -889,6 +1009,22 @@ a:hover > i {
 /* ==========================================================================
    Program
    ========================================================================== */
+/* Sticky
+ ========================================================================== */
+.js_stickySide.is_fixed {
+  position: fixed;
+  top: 40px;
+}
+
+.js_stickyInner {
+  opacity: .2;
+  transition: .25s;
+}
+
+.js_stickyInner:hover {
+  opacity: 1;
+}
+
 /* textSplit
  ========================================================================== */
 .textSplitLoad {

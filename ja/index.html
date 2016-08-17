@@ -109,6 +109,64 @@
   </div>
   <!-- /.ly_main -->
 
+  <nav class="ly_stickySide js_stickySide js_closeParent">
+    <div class="js_stickyInner">
+      <a href="close" class="el_closeBtn js_closeBtn">×</a>
+      <ul class="bl_utickyList">
+      <li><a href="#rule">記法</a></li>
+      <li class="hp_mb30"><a href="#nameRule">命名規則</a>
+        <ul class="bl_simpleList02">
+          <li><a href="#nameRule_general">汎用的に使用可能な名前</a></li>
+          <li><a href="#nameRule_omission">単語を省略する場合</a></li>
+          <li><a href="#nameRule_series">シリーズを形成する場合</a></li>
+        </ul>
+      </li>
+      <li><a href="#base">ベース</a></li>
+      <li><a href="#layout">レイアウト</a></li>
+      <li>
+        <a href="#block">ブロックモジュール</a>
+        <ul class="bl_simpleList02">
+          <li><a href="#block_applicable">適用可能なスタイル</a></li>
+          <li><a href="#block_nameSize">概念・命名の粒度</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#element">エレメントモジュール</a>
+        <ul class="bl_simpleList02">
+          <li><a href="#element_layout">レイアウトについて</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#modifier">モディファイア</a>
+        <ul class="bl_simpleList02">
+          <li><a href="#modifier_element">エレメントモジュールの例</a></li>
+          <li><a href="#modifier_block">ブロックモジュールの例</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#helper">ヘルパー</a>
+        <ul class="bl_simpleList02">
+          <li><a href="#helper_clearfix">clearfixについて</a></li>
+        </ul>
+      </li>
+      <li><a href="#unique">ユニーク</a></li>
+      <li><a href="#program">プログラム</a></li>
+      <li class="hp_mb30"><a href="#original">オリジナル</a></li>
+      <li>
+        <a href="#nestedModule">モジュールが他のモジュールにネストされる場合</a>
+        <ul class="bl_simpleList02">
+          <li><a href="#modifyAchild">Aモジュールの子要素に変更が生じる場合</a></li>
+          <li><a href="#modifyAchild_1">Aの該当子要素モジュールに直接モディファイアを付加しスタイルを変更する</a></li>
+          <li><a href="#modifyAchild_2">Aモジュールにモディファイアを付加し、ネスト指定でスタイルを変更する</a></li>
+          <li><a href="#modifyAchild_3">元のAモジュールから分離した、Aモジュールの類似であるA2モジュールを作成する</a></li>
+        </ul>
+      </li>
+      </ul>
+    </div>
+    <!-- /.js_stickyInner -->
+  </nav>
+  <!-- /.ly_stickySide -->
+
   <div class="bl_sectBlockCalm">
     <p class="bl_sectBlockCalm_txt">Basics</p>
   </div>
@@ -117,13 +175,13 @@
   <div class="ly_main">
     <div class="ly_main_inner">
       <section class="bl_sectBlock">
-        <h2 class="el_ttl">記法</h2>
+        <h2 id="rule" class="el_ttl">記法</h2>
         <p class="el_sectTxt">
           CSSの記述方法それ自体については、基本的に<a href="https://google.github.io/styleguide/htmlcssguide.xml" target="_blank">Google HTML/CSS Style Guide</a>、<a href="https://github.com/necolas/idiomatic-css" target="_blank">Principles of writing consistent, idiomatic CSS</a>に則ることを推奨します。
         </p>
       </section>
       <section class="bl_sectBlock">
-        <div class="bl_sectBlock">
+        <div id="nameRule" class="bl_sectBlock">
           <h2 class="el_ttl">命名規則</h2>
           <p class="el_sectTxt">
             PRECSSでは、意図的に記述する全てのクラスに種類に応じた2文字の接頭辞を付加します。<br>
@@ -169,7 +227,7 @@
         </div>
         <!-- /.bl_sectBlock -->
 
-        <section class="bl_sectBlock2">
+        <section id="nameRule_general" class="bl_sectBlock2">
           <h5 class="el_ttl2">汎用的に使用可能な名前</h5>
           <ul class="bl_simpleList">
             <li>_wrapper</li>
@@ -221,7 +279,7 @@
         </section>
         <!-- /.bl_sectBlock2 -->
 
-        <section class="bl_sectBlock2">
+        <section id="nameRule_omission" class="bl_sectBlock2">
           <h3 class="el_ttl2">単語を省略する場合</h3>
           <p class="el_sectTxt">
             CSSにおけるモジュール設計は非常に素晴らしいアイディアですが、命名が冗長になってしまうのは避けられない問題です。<br>
@@ -280,7 +338,7 @@
         </section>
         <!-- /.bl_sectBlock2 -->
 
-        <section class="bl_sectBlock2">
+        <section id="nameRule_series" class="bl_sectBlock2">
           <h3 class="el_ttl2">シリーズを形成する場合</h3>
            <p class="el_sectTxt">
              類似しているものは連番を付けて管理することを推奨します。ただし、シリーズを形成する、しないに関わらず1つ目のものには連番を付けません。
@@ -381,7 +439,7 @@
         </section>
         <!-- /.bl_sectBlock2 -->
 
-        <section class="bl_sectBlock2">
+        <section id="layout" class="bl_sectBlock2">
           <h3 class="el_ttl2">2.レイアウト</h3>
           <p class="el_sectTxt">
             <em class="el_note2">接頭辞：ly_</em>
@@ -449,13 +507,13 @@
         </section>
         <!-- /.bl_sectBlock2 -->
 
-        <section class="bl_sectBlock2">
+        <section id="module" class="bl_sectBlock2">
           <h3 class="el_ttl2">3.モジュール</h3>
           <p class="el_sectTxt">
             PRECSSでは移植性の高いコードをモジュールとして管理します。
           </p>
 
-          <section class="bl_sectBlock3">
+          <section id="block" class="bl_sectBlock3">
             <h4 class="el_ttl3">3-1.ブロックモジュール</h4>
             <p class="el_sectTxt">
               <em class="el_note2">接頭辞：bl_</em>
@@ -557,7 +615,7 @@
   <!-- /.bl_codeBlock -->
 
 
-            <section class="bl_sectBlock4">
+            <section id="block_applicable" class="bl_sectBlock4">
             <h5 class="el_ttl4">ブロックモジュールに適用可能なスタイル</h5>
             <p class="el_sectTxt">
               注意点として、<em class="el_caution">ブロックモジュールには他の要素に影響を及ぼさないスタイルのみを適用します</em>(<span class="el_inlineCode">margin-top/bottom</span>は例外として直接適用可能)。<br>
@@ -703,14 +761,14 @@
             <p class="el_sectTxt">
               以上のようにブロックモジュールというのは非常に柔軟で、パワフルにコード内を駆け回ることができます。<br>
               ただし、その高い移植性を維持するためには高次からのネストとという少し特殊なテクニックが必要で、慣れないうちは苦労するでしょう。<br>
-              さらに複雑なブロックモジュールの移植については、下部に<a href="#advance_moduleNest">Advance Case</a>としてまとめたので、そちらをご参照ください。
+              さらに複雑なブロックモジュールの移植については、下部に<a href="#nestedModule">Advance Case</a>としてまとめたので、そちらをご参照ください。
             </p>
             <p class="el_sectTxt">
               また下記に、ブロックモジュールを命名する際に役立つ粒度の指針を提供します。<br>PRECSSにおいてブロックモジュールは非常に重要な役割を担うため、これらの語を省略することは推奨しません。<br>
               必ずしもこれらの名前を含まなければならない訳ではありませんが、これらを参考にすることは、あなたがブロックモジュールを自在に操ることを強力に手助けしてくれるでしょう（現実として、Unit以上の大きさを使用することはあまり無いでしょう）。
             </p>
 
-            <section class="bl_sectBlock4">
+            <section id="block_nameSize" class="bl_sectBlock4">
               <h5 class="el_ttl4">ブロックモジュールにおける概念・命名の粒度</h5>
               <ul class="bl_simpleList">
                 <li>Block - ブロックモジュールの基本単位。そのモジュール特有の複数の子要素や、エレメントモジュールを含む</li>
@@ -723,7 +781,7 @@
           </section>
           <!-- /.bl_sectBlock3 -->
 
-          <section class="bl_sectBlock3">
+          <section id="element" class="bl_sectBlock3">
             <h4 class="el_ttl3">3-2.エレメントモジュール</h4>
             <p class="el_sectTxt">
               <em class="el_note2">接頭辞：el_</em>
@@ -828,7 +886,7 @@
   <!-- /.bl_codeBlock -->
 
 
-            <section class="bl_sectBlock4">
+            <section id="element_layout" class="bl_sectBlock4">
             <h5 class="el_ttl4">レイアウトについて</h5>
               <p class="el_sectTxt">
                 移植性の維持のため、ブロックモジュールと同じく<em class="el_caution">エレメントモジュール自体にレイアウトのためのスタイルを当てることは推奨しません</em>。<br>
@@ -886,7 +944,7 @@
           </section>
           <!-- /.bl_sectBlock3 -->
 
-          <section class="bl_sectBlock3">
+          <section id="modifier" class="bl_sectBlock3">
             <h4 class="el_ttl3">3-3.モディファイア</h4>
             <p class="el_sectTxt">
               既に何度か言及していますが、
@@ -901,7 +959,7 @@
               多くはモジュールグループにおいて使用されますが、状況によってはレイアウトグループ等に使用することももちろん可能です。<br>
               注意点としてモディファイアでスタイルを上書きする際は、<em class="el_caution">基本的に複数クラスで上書きし、詳細度を高めます。</em>「スタイルを上書きする」ということは意図的なアクションであり、であればCSSの読み込み順でスタイルに変化が出てしまうのは好ましくありません。
             </p>
-            <section class="bl_sectBlock4"><h5 class="el_ttl4">エレメントモジュールの例</h5>
+            <section id="modifier_element" class="bl_sectBlock4"><h5 class="el_ttl4">エレメントモジュールの例</h5>
               
               
   <div class="bl_codeBlock">
@@ -939,7 +997,7 @@
             </section>
             <!-- /.bl_sectBlock4 -->
 
-            <section class="bl_sectBlock4">
+            <section id="modifier_block" class="bl_sectBlock4">
               <h5 class="el_ttl4">ブロックモジュールの例</h5>
               <p class="el_sectTxt">
                 ブロックモジュールにおいて子要素にモディファイアによる変更を適用する際、
@@ -1034,7 +1092,7 @@
         </section>
         <!-- /.bl_sectBlock2 -->
 
-        <section class="bl_sectBlock2">
+        <section id="helper" class="bl_sectBlock2">
           <h3 class="el_ttl2">4.ヘルパー</h3>
           <p class="el_sectTxt">
             <em class="el_note2">接頭辞：hp_</em>
@@ -1080,7 +1138,7 @@
   </div>
   <!-- /.bl_codeBlock -->
 
-          <section class="bl_sectBlock3">
+          <section id="helper_clearfix" class="bl_sectBlock3">
             <h5 class="el_ttl3">clearfixについて</h5>
             <p class="el_sectTxt">
               PRECSSではfloatの解除にclearfixを推奨します。これは、floatの解除のためだけに本来の目的とは関係の無いスタイルを記述することを忌避するためです。<br>
@@ -1219,7 +1277,7 @@
         </section>
         <!-- /.bl_sectBlock2 -->
 
-        <section class="bl_sectBlock2">
+        <section id="original" class="bl_sectBlock2">
           <h3 class="el_ttl2">7.オリジナル</h3>
           <p class="el_sectTxt">
             その他、サイトの構築思想に応じて柔軟に接頭辞を追加できるのがPRECSSの特徴です。 <br>例えばオリジナルのグリッドレイアウトを構築する場合、gridの略として<span class="el_inlineCode">.gr_4</span>、<span class="el_inlineCode">gr_6</span>やcolumnの略として<span class="el_inlineCode">.cl_4</span>、<span class="el_inlineCode">cl_6</span>といった接頭辞を追加することができます。<br>
@@ -1242,8 +1300,8 @@
 
   <div class="ly_main">
     <div class="ly_main_inner">
-      <section class="bl_sectBlock">
-        <h2 class="el_ttl" id="advance_moduleNest">モジュールが他のモジュールにネストされる場合</h2>
+      <section id="nestedModule" class="bl_sectBlock">
+        <h2 class="el_ttl">モジュールが他のモジュールにネストされる場合</h2>
         <p class="el_sectTxt">
           PRECSSでは一つのブロックモジュール内に他のブロックモジュール、またはエレメントモジュールがネストされることがあります。これは、モジュールが「持ち運び可能なもの」である思想の下の挙動です。<br>
           その際に直面する、主にレイアウトの問題について、幾つか指針を示します。<br>
@@ -1384,7 +1442,7 @@
           このように記述することで、ブロックモジュールの聖域を守りメンテナンス範囲の明確なコードを維持するだけでなく、他所へ移植した際もコンテキストに関わらず同じ状態を再現出来る、汎用性の高いモジュールになります。
         </p>
 
-        <section class="bl_sectBlock2">
+        <section id="modifyAchild" class="bl_sectBlock2">
           <h3 class="el_ttl2">Aモジュールの子要素に変更が生じる場合</h3>
           <p class="el_sectTxt">
             BモジュールがAモジュールに移植された際、場合によってはAモジュールの子要素に変更が生じることもあるでしょう。<br>
@@ -1400,7 +1458,7 @@
           <span class="el_inlineCode">bl_imgBlock</span>と<span class="el_inlineCode">bl_sectBlock_txt</span>が左右ほぼ均等に横並び表示されるパターンを例に、それぞれ解説します。
         </p>
         <iframe class="el_iframe js_iframe" src="/sample/advance3.html"></iframe>
-        <section class="bl_sectBlock3">
+        <section id="modifyAchild_1" class="bl_sectBlock3">
           <h4 class="el_ttl3">Aの該当子要素モジュールに直接モディファイアを付加しスタイルを変更する</h4>
           
           
@@ -1450,7 +1508,7 @@
         </section>
         <!-- /.bl_sectBlock3 -->
 
-        <section class="bl_sectBlock3">
+        <section id="modifyAchild_2" class="bl_sectBlock3">
           <h4 class="el_ttl3">Aモジュールにモディファイアを付加し、ネスト指定でスタイルを変更する</h4>
           
           
@@ -1503,7 +1561,7 @@
         </section>
         <!-- /.bl_sectBlock3 -->
 
-        <section class="bl_sectBlock3">
+        <section id="modifyAchild_3" class="bl_sectBlock3">
           <h4 class="el_ttl3">元のAモジュールから分離した、Aモジュールの類似であるA2モジュールを作成する</h4>
           
           
