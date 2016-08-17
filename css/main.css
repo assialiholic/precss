@@ -204,6 +204,12 @@ a:hover > i {
   left: 0;
 }
 
+@media screen and (max-width: 768px) {
+  .ly_stickySide {
+    display: none;
+  }
+}
+
 /* Footer
    ========================================================================== */
 .ly_footer {
