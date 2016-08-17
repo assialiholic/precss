@@ -331,27 +331,28 @@
         <div class="bl_sectBlock">
           <h2 class="el_ttl">基本設計</h2>
           <p class="el_sectTxt">
-            PRECSSは下記の5つのグループから構成されています。<br>
+            PRECSSは下記の6つのグループから構成されています。<br>
             <span class="el_note">※ソースコードは最低限解説に必要な記述のみを記載しています。</span>
           </p>
           <ol class="bl_simpleList">
-            <li>ベース</li>
-            <li>レイアウト</li>
+          <li><a href="#base">ベース</a></li>
+            <li><a href="#layout">レイアウト</a></li>
             <li>
-              モジュール
+              <a href="#module">モジュール</a>
               <ol class="bl_simpleList hp_mb0">
-                <li>ブロックモジュール</li>
-                <li>エレメントモジュール</li>
+              <li><a href="#block">ブロックモジュール</a></li>
+                <li><a href="#element">エレメントモジュール</a></li>
               </ol>
             </li>
-            <li>ヘルパー</li>
-            <li>プログラム</li>
-            <li>(オリジナル)</li>
+            <li><a href="#helper">ヘルパー</a></li>
+            <li><a href="#unique">ユニーク</a></li>
+            <li><a href="#program">プログラム</a></li>
+            <li><a href="#original">(オリジナル)</a></li>
           </ol>
         </div>
         <!-- /.bl_sectBlock -->
 
-        <section class="bl_sectBlock2">
+        <section id="base" class="bl_sectBlock2">
           <h3 class="el_ttl2">1.ベース</h3>
           <p class="el_sectTxt">
             <em class="el_note2">接頭辞：なし</em>
@@ -1091,8 +1092,65 @@
         </section>
         <!-- /.bl_sectBlock2 -->
 
-        <section class="bl_sectBlock2">
-          <h3 class="el_ttl2">5.プログラム</h3>
+        <section id="unique" class="bl_sectBlock2">
+          <h3 class="el_ttl2">5.ユニーク</h3>
+          <p class="el_sectTxt">
+            ある1ページでしか使用されていないことを明示するグループです。<br>
+            そのページでしか使われていないため、改修や運用の際に影響範囲を気にせずにスタイルを編集してよい目印になっています。<br>
+            モジュールの大きさも自由です。小さくても大きくてもかまいせん。
+          </p>
+          <p class="el_sectTxt">
+            例えば<a href="/" target="_blank">PRECSSの扉ページ</a>のような特別なページに使用するのもいいですし、通常のページ内でもモジュール設計から外れる場所に使用するのもいいでしょう。<br>
+            つまりユニークグループは、あらゆるイレギュラーのための万能な回避策です。<br>
+            何か迷ったら、とりあえずユニークグループを使ってください。いつでも誰でも、すぐに手直ししてよい目印です。<br>
+            ただし濫用し過ぎると拡張性に欠けるため、あくまでイレギュラーのための措置であることを覚えておいてください。
+          </p>
+          <p class="el_sectTxt">
+            またCSSには、どのページで使用しているかコメントを残しておくとよりよいでしょう。
+          </p>
+          <p class="el_sectTxt">
+            <em class="el_note2">接頭辞：un_</em>
+          </p>
+          
+  <div class="bl_codeBlock">
+    <em class="bl_codeBlock_ttl">HTML</em>
+    <pre class="brush:html; class-name:''; highlight:[]">
+      
+              &lt;div class=&#34;un_siteRoot_wrapper&#34;&gt;
+                &lt;section class=&#34;un_siteRoot&#34;&gt;
+                  &lt;p class=&#34;un_siteRoot_logo&#34;&gt;&lt;img src=&#34;images/icon.svg&#34; alt=&#34;PRECSS logo&#34;&gt;&lt;/p&gt;
+                  &lt;h1 class=&#34;un_siteRoot_ttl&#34;&gt;PRECSS&lt;/h1&gt;
+                  &lt;p class=&#34;un_siteRoot_link&#34;&gt;&lt;span class=&#34;is_deactive&#34;&gt;English&lt;/span&gt; / &lt;a href=&#34;/ja/&#34;&gt;日本語&lt;/a&gt;&lt;/p&gt;
+                &lt;/section&gt;
+              &lt;/div&gt;
+    </pre>
+  </div>
+  <!-- /.bl_codeBlock -->
+
+          
+          
+  <div class="bl_codeBlock">
+    <em class="bl_codeBlock_ttl">Recommended(CSS)</em>
+    <pre class="brush:css; class-name:''; highlight:[]">
+      
+              //トップページに使用
+              .un_siteRoot_wrapper {
+                position: relative;
+                top: 33vh;
+                text-align: center;
+              }
+              .un_siteRoot {
+                display: inline-block;
+              }...
+    </pre>
+  </div>
+  <!-- /.bl_codeBlock -->
+
+        </section>
+        <!-- /.bl_sectBlock2 -->
+
+        <section id="program" class="bl_sectBlock2">
+          <h3 class="el_ttl2">6.プログラム</h3>
           <p class="el_sectTxt">
             PRECSSではJavaScript等のプログラムで要素にタッチする際、極力専用のクラスを付加しCSS用のクラスとは分離することを推奨します。
           </p>
@@ -1162,7 +1220,7 @@
         <!-- /.bl_sectBlock2 -->
 
         <section class="bl_sectBlock2">
-          <h3 class="el_ttl2">6.オリジナル</h3>
+          <h3 class="el_ttl2">7.オリジナル</h3>
           <p class="el_sectTxt">
             その他、サイトの構築思想に応じて柔軟に接頭辞を追加できるのがPRECSSの特徴です。 <br>例えばオリジナルのグリッドレイアウトを構築する場合、gridの略として<span class="el_inlineCode">.gr_4</span>、<span class="el_inlineCode">gr_6</span>やcolumnの略として<span class="el_inlineCode">.cl_4</span>、<span class="el_inlineCode">cl_6</span>といった接頭辞を追加することができます。<br>
             スマートフォンのみ有効なクラスは<span class="el_inlineCode">.sp_**</span>、タブレットのみ有効なクラスは<span class="el_inlineCode">.tb_**</span>とするのもいいでしょう。<br>
