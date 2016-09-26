@@ -350,6 +350,7 @@ a:hover > i {
   margin: 0 auto;
   background: url(/images/MV_back.svg) left top no-repeat;
   background-size: cover;
+  background-color: rgba(0,0,0,0.01);
   border-radius: 5px;
   box-shadow: 0 1px 5px rgba(174, 168, 168, 0.4);
   color: #666666;
