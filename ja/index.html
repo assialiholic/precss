@@ -19,7 +19,7 @@
   <meta name="twitter:description" content="PRECSS is a new modular architecture approach based on OOCSS, SMACSS and BEM.">
   <link rel="shortcut icon" href="/images/favicon.ico" />
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+  <script defer src="//use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
   <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro|Rokkitt' rel='stylesheet' type='text/css'>
 </head>
 <body>
@@ -28,7 +28,7 @@
       <div class="bl_headerConts">
         <p class="bl_headerConts_logo"><img src="/images/logo.svg" alt="PRE_CSS"></p>
         <ul class="bl_headerConts_nav">
-          <li><i class="fa fa-github" aria-hidden="true"></i><a href="//github.com/assialiholic/precss/" target="_blank">GitHub</a></li>
+          <li><i class="fab fa-github" aria-hidden="true"></i><a href="//github.com/assialiholic/precss/" target="_blank">GitHub</a></li>
         </ul>
       </div>
       <!-- /.bl_headerConts -->
@@ -64,14 +64,14 @@
         <h2 class="bl_catch_head">OOCSSやSMACSS、BEMの素晴らしさ巧みに取り入れ<br>更に進化させた強力なモジュール設計。それがPRECSSです。</h2>
         <div class="bl_featureUnit bl_featureUnit__col2 cf">
           <dl class="bl_featureBlock">
-            <dt><i class="fa fa-sort-alpha-asc hp_fz1_5e" aria-hidden="true"></i><br>全てに接頭辞を付加</dt>
+            <dt><i class="fas fa-sort-alpha-down hp_fz1_5e" aria-hidden="true"></i><br>全てに接頭辞を付加</dt>
             <dd>
               PRECSSの管理下にあるクラスは、全て種類に応じた接頭辞が付加されます。これにより接頭辞を一目見ただけで役割、スコープ、依存の全てを把握することができます。<br>
               もうモジュールの大きさに悩まないでください。
             </dd>
           </dl>
           <dl class="bl_featureBlock">
-            <dt><i class="fa fa-check-circle hp_fz1_5e" aria-hidden="true"></i><br>最適化された命名規則</dt>
+            <dt><i class="fa fa-check-circle hp_fz1_3e" aria-hidden="true"></i><br>最適化された命名規則</dt>
             <dd>
               クラス名は全てスネークケースとキャメルケースの混成で構成され、それらの使い分けには明確なルールがあります。<br>
               省略語についても指針を示しているため、今までのように悩んだあげく、とても長い名前を付ける必要はもうありません。
@@ -87,18 +87,17 @@
             </dd>
           </dl>
           <dl class="bl_featureBlock">
-            <dt class="js_matchHeight"><i class="fa fa-users hp_fz1_3e" aria-hidden="true"></i><br>他種族との共存</dt>
+            <dt class="js_matchHeight"><i class="fa fa-users hp_fz1_5e" aria-hidden="true"></i><br>他種族との共存</dt>
             <dd>
               明確な独自記法により、あなたが書いたクラスとCMSやCSSフレームワークが出力したクラスを明確に区別することができるでしょう。<br>
               全てPRECSSのルールに従わなければならないのではなく、他の者も受け入れる柔軟さがPRECSSにはあります。
             </dd>
           </dl>
           <dl class="bl_featureBlock">
-            <dt class="js_matchHeight"><i class="fa fa-university hp_fz1_3e" aria-hidden="true"></i><br>&le; コーディングルール</dt>
+            <dt class="js_matchHeight"><i class="fas fa-expand-arrows-alt hp_fz1_3e" aria-hidden="true"></i><br>拡張可能</dt>
             <dd>
-              ドキュメントが長いと感じますか？今までのCSSが破綻した原因は、ドキュメントの短さにありました。<br>
-              コーディングルールのベースになることを目指しているPRECSSは、ときにとても細かい話もします。<br>
-              誰が書いても、なるべく破綻しないために。
+              スマートフォンのみに有効なクラスが必要になった場合は、「.sp_**」という接頭辞を持つグループを作るのもよいでしょう。<br>
+              PRECSSは基本的にそれぞれ独自の接頭辞を持つ6つのグループから成り立っていますが、必要に応じて拡張も可能です。
             </dd>
           </dl>
         </div>
@@ -947,6 +946,7 @@
           <section id="modifier" class="bl_sectBlock3">
             <h4 class="el_ttl3">3-3.モディファイア</h4>
             <p class="el_sectTxt">
+              <em class="el_note2">命名規則：基となるクラス名__モディファイア名</em><br>
               既に何度か言及していますが、
             </p>
             <ul class="bl_simpleList">
@@ -955,9 +955,10 @@
               <li>一定の規則に従ってスタイルが変わる（カラム等）</li>
             </ul>
             <p class="el_sectTxt">
-              場合はモディファイアによる上書きをPRECSSでは推奨します。<br>
+              場合はモディファイアによる上書きをPRECSSでは推奨し、モディファイア名をアンダースコア2つで表します。<br>
               多くはモジュールグループにおいて使用されますが、状況によってはレイアウトグループ等に使用することももちろん可能です。<br>
-              注意点としてモディファイアでスタイルを上書きする際は、<em class="el_caution">基本的に複数クラスで上書きし、詳細度を高めます。</em>「スタイルを上書きする」ということは意図的なアクションであり、であればCSSの読み込み順でスタイルに変化が出てしまうのは好ましくありません。
+              注意点としてモディファイアでスタイルを上書きする際は、<em class="el_caution">基本的に複数クラスで上書きし、詳細度を高めます。</em><br>
+              「スタイルを上書きする」ということは意図的なアクションであり、であればCSSの読み込み順でスタイルに変化が出てしまうのは好ましくありません。
             </p>
             <section id="modifier_element" class="bl_sectBlock4"><h5 class="el_ttl4">エレメントモジュールの例</h5>
               
@@ -1634,7 +1635,7 @@
     <p class="el_centerTxt">
       PRECSS is maintained and funded by assialiholic.<br>
       Contributors &amp; Transrators wanted!<br>
-      <a href="//github.com/assialiholic/precss/" target="_blank"><i class="fa fa-github fa-3x" aria-hidden="true"></i></a>
+      <a href="//github.com/assialiholic/precss/" target="_blank"><i class="fab fa-github fa-3x" aria-hidden="true"></i></a>
     </p>
   </div>
   <!-- /.ly_footer_inner -->
