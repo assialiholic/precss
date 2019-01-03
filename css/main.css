@@ -348,9 +348,8 @@ a:hover > i {
   max-width: 100%;
   padding: 2.3em 0 .3em;
   margin: 0 auto;
-  background: url(/images/MV_back.svg) left top no-repeat;
+  background: url(/images/MV_back.svg) left top no-repeat rgba(0, 0, 0, 0.01);
   background-size: cover;
-  background-color: rgba(0,0,0,0.01);
   border-radius: 5px;
   box-shadow: 0 1px 5px rgba(174, 168, 168, 0.4);
   color: #666666;
@@ -580,6 +579,10 @@ a:hover > i {
 .bl_simpleList > li > a {
   padding-left: 1em;
   text-indent: -1em;
+}
+
+.bl_simpleList.bl_simpleList__LSTroman {
+  list-style-type: lower-roman;
 }
 
 .bl_simpleList02 {
@@ -820,6 +823,7 @@ a:hover > i {
    ========================================================================== */
 .el_sectTxt {
   margin-bottom: 30px;
+  line-height: 1.8;
 }
 
 .el_note {
@@ -1082,7 +1086,6 @@ a:hover > i {
   margin: 0 !important;
   outline: 0 !important;
   overflow: visible !important;
-  padding: 0 !important;
   position: static !important;
   right: auto !important;
   text-align: left !important;
@@ -1147,6 +1150,8 @@ a:hover > i {
 
 .syntaxhighlighter table td.code {
   width: 100% !important;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .syntaxhighlighter table td.code .container {
@@ -1367,8 +1372,8 @@ a:hover > i {
 }
 
 .syntaxhighlighter .gutter .line.highlighted {
-  background-color: #435a5f !important;
-  color: #1b2426 !important;
+  background-color: #e13626 !important;
+  color: #ffffff !important;
 }
 
 .syntaxhighlighter.printing .line .content {
