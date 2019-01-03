@@ -241,8 +241,14 @@ Element Module
 ========================================================================== */
 /* Button
 ========================================================================== */
+.ly_header > .el_btn {
+  float: right;
+  margin: 0 20px 0 0;
+}
+
 .el_btn {
   display: inline-block;
+  width: 200px;
   max-width: 200px;
   padding: .5em 1em;
   margin: 0 0 20px;
@@ -256,9 +262,17 @@ Element Module
   transition: .25s;
 }
 
-.el_btn.el_btn__w100p {
-  width: 100%;
-  max-width: 100%;
+.el_btn.el_btn__large {
+  width: 400px;
+  max-width: 400px;
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+
+@media screen and (max-width: 768px) {
+  .el_btn.el_btn__large {
+    width: 100%;
+  }
 }
 
 .el_btn.el_btn__orange {
@@ -269,11 +283,6 @@ Element Module
 .el_btn.el_btn__blue {
   background-color: #308EDE;
   box-shadow: 0 3px 0 #2572B1;
-}
-
-.ly_header > .el_btn {
-  float: right;
-  margin: 0 20px 0 0;
 }
 
 .el_btn:hover {

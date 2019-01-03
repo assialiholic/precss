@@ -828,7 +828,8 @@
             <p class="el_sectTxt">
               elはelementの略です。ボタンやラベル、見出し等の最小単位のモジュールで、単体で持ち運ぶことが可能です。<br>
               命名は<em class="el_caution">極力汎用的なもの</em>を推奨します。これはどのようなものがコンテンツとして入ったとしても、名前と内容が乖離しないための措置です。<br>
-              <span class="el_note">※ただしサイト内においてスタイルと命名がセマンティックに一致する場合は、その限りではありません（商品やブランドのラベルとテーマカラーが紐付いている場合など）。</span>
+              「極力汎用的な命名を」というのはBEMとは真逆の方向を向いている思想ですが、現実として、例えば全ての色に意味を持たせた命名は困難です。
+              <span class="el_note">※もちろんプロジェクトのデザインシステムにおいて、スタイルと命名がセマンティックに一致する場合は、その限りではありません（色がきちんとテーマカラーとして定義されていたり、商品やブランドがテーマカラーを持つ場合など）。</span>
             </p>
             <p class="el_sectTxt">
               類似するスタイルのエレメントモジュールが複数存在する場合は、OOCSSにおけるストラクチャとスキンの考え方を使用します。<br>
@@ -840,11 +841,11 @@
             
   <div class="bl_codeBlock">
     <em class="bl_codeBlock_ttl">Not recommended(HTML)</em>
-    <pre class="brush:html; class-name:'light'; highlight:[1,4,5,11,12]">
+    <pre class="brush:html; class-name:'light'; highlight:[4,5,12,13]">
       
-              &lt;!-- 名前が汎用的でない --&gt;
               &lt;div class=&#34;bl_sectBlock&#34;&gt;
                 &lt;h2 class=&#34;bl_sectBlock_ttl&#34;&gt;.bl_sectBlock
+                  &lt;!-- 名前が汎用的でないため推奨しない --&gt;
                   &lt;span class=&#34;el_label el_label__news&#34;&gt;News&lt;/span&gt;
                   &lt;span class=&#34;el_label el_label__blog&#34;&gt;Blog&lt;/span&gt;
                 &lt;/h2&gt;
@@ -852,8 +853,9 @@
               &lt;/div&gt;
 
               &lt;p class=&#34;hp_tac&#34;&gt;
-                &lt;a href=&#34;&#34; class=&#34;el_btn el_btn__cancel&#34;&gt;Cancel&lt;/a&gt;
-                &lt;a href=&#34;&#34; class=&#34;el_btn el_btn__submit&#34;&gt;Submit&lt;/a&gt;
+                &lt;!-- 名前が汎用的でないため推奨しない --&gt;
+                &lt;button href=&#34;&#34; class=&#34;el_btn el_btn__cancel&#34;&gt;Cancel&lt;/button&gt;
+                &lt;button href=&#34;&#34; class=&#34;el_btn el_btn__submit&#34;&gt;Submit&lt;/button&gt;
               &lt;/p&gt;
     </pre>
   </div>
@@ -874,8 +876,8 @@
               &lt;/div&gt;
 
               &lt;p class=&#34;hp_tac&#34;&gt;
-                &lt;a href=&#34;&#34; class=&#34;el_btn el_btn__blue&#34;&gt;Cancel&lt;/a&gt;
-                &lt;a href=&#34;&#34; class=&#34;el_btn el_btn__orange&#34;&gt;Submit&lt;/a&gt;
+                &lt;button href=&#34;&#34; class=&#34;el_btn el_btn__blue&#34;&gt;Cancel&lt;/button&gt;
+                &lt;button href=&#34;&#34; class=&#34;el_btn el_btn__orange&#34;&gt;Submit&lt;/button&gt;
               &lt;/p&gt;
     </pre>
   </div>
@@ -929,27 +931,49 @@
             <h5 class="el_ttl4">レイアウトについて</h5>
               <p class="el_sectTxt">
                 移植性の維持のため、ブロックモジュールと同じく<em class="el_caution">エレメントモジュール自体にレイアウトのためのスタイルを当てることは推奨しません</em>。<br>
-                移植先のモジュールからのネストか、もしくは上記の<span class="el_inlineCode">.hp_tac</span>のように何らかの親要素を使用するのが理想です。（<span class="el_inlineCode">.hp_</span>については次のヘルパーセクションで解説します）<br>
-                ただし、ブロックモジュールに比べエレメントモジュールはサイト全体でバリエーションに限りがあることが多いため、widthの直接指定、及びモディファイアでサイズのパターンを作成することは十分許容します。<br>
-                ただし<span class="el_inlineCode">__w250(px)</span>と数値を固定すると、レスポンシブ・ウェブデザインを採用しSPビューになった際に、モディファイアの数値と実際の大きさに矛盾が発生すると<em class="el_caution">破綻への第一歩</em>となることは留意しておいてください。<br>
-                状況にもよりますが、可能であれば<span class="el_inlineCode">inline-block</span>を使用し大きさが可変するようにしておくと応用が効くでしょう。<br>
-                もちろん移植先からのネスト時に都度widthを調整することも可能で、名前に数値が入らないので破綻のリスクも軽減します。
+                移植先のモジュールからのElementとしての指定か、もしくは上記の<span class="el_inlineCode">.hp_tac</span>のように何らかの親要素を使用するのが理想です。（<span class="el_inlineCode">.hp_</span>については次のヘルパーセクションで解説します）
+              </p>
+              <p class="el_sectTxt">
+                ただし、ブロックモジュールに比べエレメントモジュールはサイト全体でバリエーションに限りがあることが多いため、widthの直接指定、及びモディファイアでサイズのパターンを作成することは十分許容します（例えば、ボタンのサイズは多くのデザインにおいてパターンがあるでしょう）。
+              </p>
+              <p class="el_sectTxt">
+                ただし、例えば
+              </p>
+              <ul class="bl_simpleList">
+                <li>レスポンシブ・ウェブデザインを採用し</li>
+                <li>スマートフォンを想定するビューでは、ボタンを横幅100%にする</li>
+              </ul>
+              <p class="el_sectTxt">
+                となった際に、モディファイアの名前を<span class="el_inlineCode">__w250(px)</span>と数値を固定すると、<span class="el_inlineCode">__w250(px)</span>と付いているのにSPビューでの実際の表示は横幅100％という事態が発生します。
+                このように名前と実際の大きさに矛盾が発生すると<em class="el_caution">破綻への第一歩</em>となることは留意しておいてください。<br>
+                状況にもよりますが、解決策としては
+              </p>
+              <ul class="bl_simpleList">
+                <li>サイズを指定する場合は、モディファイア名は<span class="el_inlineCode">__small</span>・<span class="el_inlineCode">__medium</span>・<span class="el_inlineCode">__large</span>などとする</li>
+                <li>サイズを指定せずコンテンツに応じて可変にする場合は、<span class="el_inlineCode">display: inline-block;</span>としておく</li>
+              </ul>
+              <p class="el_sectTxt">
+                などすると、応用が効くでしょう。
+              </p>
+              <p class="el_sectTxt">
+                もしくは移植先のモジュールのElementとしての指定か、それが難しい場合は移植先のモジュールの名前と子（孫）結合子を使用したスタイリングも、あまり推奨はしませんが許容します。<br>
+                次のコードは移植先のモジュールの名前と子結合子で制御した例と、モディファイアで制御した例です。
               </p>
               <iframe class="el_iframe js_iframe" src="/sample/elementModule2.html"></iframe>
               
               
   <div class="bl_codeBlock">
     <em class="bl_codeBlock_ttl">Recommended(HTML)</em>
-    <pre class="brush:html; class-name:''; highlight:[2,3,7,8]">
+    <pre class="brush:html; class-name:''; highlight:[]">
       
                 &lt;header class=&#34;ly_header cf&#34;&gt;
-                  &lt;!-- 移植先からのネスト --&gt;
+                  &lt;!-- 子結合子で制御した例 --&gt;
                   &lt;a href=&#34;&#34; class=&#34;el_btn el_btn__orange&#34;&gt;.el_btn__orange&lt;br&gt;(nested)&lt;/a&gt;
                 &lt;/header&gt;
 
                 &lt;div class=&#34;ly_main&#34;&gt;
-                  &lt;!-- モディファイア --&gt;
-                  &lt;a href=&#34;&#34; class=&#34;el_btn el_btn__w100p el_btn__orange&#34;&gt;.el_btn__w100p&lt;/a&gt;
+                  &lt;!-- モディファイアで制御した例 --&gt;
+                  &lt;a href=&#34;&#34; class=&#34;el_btn el_btn__large el_btn__orange&#34;&gt;.el_btn__large&lt;/a&gt;
                 &lt;/div&gt;
     </pre>
   </div>
@@ -962,16 +986,22 @@
     <em class="bl_codeBlock_ttl">Recommended(CSS)</em>
     <pre class="brush:css; class-name:''; highlight:[]">
       
+                // 子結合子で制御した例
+                .ly_header &gt; .el_btn{
+                  float: right;
+                  margin: 0 20px 0 0;
+                }
+
                 .el_btn {
-                  //移植先からのネスト
-                  .ly_header &gt; &amp; {
-                    float: right;
-                    margin: 0 20px 0 0;
-                  }
-                  //モディファイア
-                  &amp;.el_btn__w100p {
-                    width: 100%;
-                    max-width: 100%;
+                  //モディファイアで制御した例
+                  &amp;.el_btn__large{
+                    width: 400px;
+                    max-width: 400px;
+                    padding-top: 1em;
+                    padding-bottom: 1em;
+                    @media screen and (max-width: 768px){
+                      width: 100%;
+                    }
                   }
                 }
     </pre>
