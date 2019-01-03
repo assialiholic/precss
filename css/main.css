@@ -581,6 +581,10 @@ a:hover > i {
   text-indent: -1em;
 }
 
+.bl_simpleList.bl_simpleList__LSTroman {
+  list-style-type: lower-roman;
+}
+
 .bl_simpleList02 {
   padding: 0 0 0 .5em;
   margin-bottom: 3px;
