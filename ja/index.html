@@ -520,7 +520,8 @@
             </p>
             <p class="el_sectTxt">
               blはblockの略です。ブロックモジュール特有の複数の子要素や、後述するエレメントモジュールを内包し、<em class="el_caution">一つの塊として持ち運び可能なモジュール群</em>を形成します。<br>
-              ブロックモジュールの子要素は基本的に親の名前を継承し、子となるに従いアンダースコアで結合することで構造を明確にします。
+              ブロックモジュールの子要素は基本的に親の名前のみを継承し、アンダースコアの後に子要素の名前を続けます。<br>
+              例えば子要素の中に子要素がネストされている際も、ネストされている子要素はあくまで親の名前のみを継承します。
             </p>
             <iframe class="el_iframe js_iframe" src="/sample/blockModule.html"></iframe>
             
@@ -532,7 +533,7 @@
               &lt;div class=&#34;bl_sectBlock&#34;&gt;
                 &lt;h2 class=&#34;bl_sectBlock_ttl&#34;&gt;.bl_sectBlock&lt;/h2&gt;
                 &lt;p class=&#34;bl_sectBlock_txt&#34;&gt;
-                  &lt;img class=&#34;bl_sectBlock_txt_img&#34; src=&#34;&#34;&gt;
+                  &lt;img class=&#34;bl_sectBlock_img&#34; src=&#34;&#34;&gt;
                   Lorem ipsum...
                 &lt;/p&gt;
               &lt;/div&gt;
@@ -556,16 +557,16 @@
       
               .bl_sectBlock {
                 padding: 1%;
-                margin: 0 0 20px 0;
+                margin-bottom: 20px;
                 border: 1px solid #ccc;
               }
               .bl_sectBlock_ttl {...}
               .bl_sectBlock_txt {...}
-              .bl_sectBlock_txt_img {...}
+              .bl_sectBlock_img {...}
 
               .bl_imgBlock {
                 padding: 1%;
-                margin: 0 0 20px 0;
+                margin-bottom: 20px;
                 border: 1px solid #ccc;
                 text-align: center;
               }
@@ -580,7 +581,43 @@
 
 
             <p class="el_sectTxt">
-              PRECSSではSMACSSと同様に、子要素のタグにスタイルを直接指定することを許容します。ただしその際はなるべく子セレクタで指定をすること、<span class="el_inlineCode">div</span>や<span class="el_inlineCode">span</span>等のセマンティックでない要素は独自のクラスを付加することを推奨します。<br>
+              ただし、
+            </p>
+            <ul class="bl_simpleList">
+              <li>親子関係を意図をもって明確に定義したい</li>
+              <li>モジュールが大きいため、子要素の名前の重複を避けたい</li>
+            </ul>
+            <p class="el_sectTxt">
+              のいずれかに該当する場合は、 ネストされた子要素のクラス名に直近の子要素の名前を含めることも許容します。<br>
+              次のコードは4行目で<span class="el_inlineCode">.bl_sectBlock_ttl_note</span>が<span class="el_inlineCode">.bl_sectBlock_ttl</span>の子要素であることをクラス名で明示し、また、10行目の<span class="el_inlineCode">.bl_sectBlock_note</span>との重複を避けています。
+            </p>
+
+            
+            
+  <div class="bl_codeBlock">
+    <em class="bl_codeBlock_ttl">HTML</em>
+    <pre class="brush:html; class-name:''; highlight:[4,10]">
+      
+              &lt;div class=&#34;bl_sectBlock&#34;&gt;
+                &lt;h2 class=&#34;bl_sectBlock_ttl&#34;&gt;
+                  .bl_sectBlock
+                  &lt;span class=&#34;bl_sectBlock_ttl_note&#34;&gt;Note here&lt;/span&gt;
+                &lt;/h2&gt;
+                &lt;p class=&#34;bl_sectBlock_txt&#34;&gt;
+                  &lt;img class=&#34;bl_sectBlock_img&#34; src=&#34;&#34;&gt;
+                  Lorem ipsum...
+                &lt;/p&gt;
+                &lt;p class=&#34;bl_sectBlock_note&#34;&gt;
+                 * Note here...
+                &lt;/p&gt;
+              &lt;/div&gt;
+    </pre>
+  </div>
+  <!-- /.bl_codeBlock -->
+
+
+            <p class="el_sectTxt">
+              またPRECSSではSMACSSと同様に、子要素のタグにスタイルを直接指定することを許容します。ただしその際はなるべく子結合子で指定をすること、<span class="el_inlineCode">div</span>や<span class="el_inlineCode">span</span>等のセマンティックでない要素は独自のクラスを付加することを推奨します。<br>
               また、あまり階層が深くなり過ぎるとコードの見通しや詳細度の管理に影響が出る恐れがあるため、ネストは3階層程度までを目処とし、それ以上になりそうな場合は適宜クラスを付加することを推奨します。
             </p>
             
@@ -605,7 +642,7 @@
       
                 .bl_circleList {
                   padding-left: 1em;
-                  margin: 0 0 20px 0;
+                  margin-bottom: 20px;
                 }
                 .bl_circleList &gt; li {
                   list-style-type: circle;
@@ -618,9 +655,12 @@
             <section id="block_applicable" class="bl_sectBlock4">
             <h5 class="el_ttl4">ブロックモジュールに適用可能なスタイル</h5>
             <p class="el_sectTxt">
-              注意点として、<em class="el_caution">ブロックモジュールには他の要素に影響を及ぼさないスタイルのみを適用します</em>(<span class="el_inlineCode">margin-top/bottom</span>は例外として直接適用可能)。<br>
-              他に影響を及ぼすスタイル、即ち<span class="el_inlineCode">float</span>や<span class="el_inlineCode">width</span>等のレイアウトに関わるものは、一層上の親からネストする形でスタイルを適用します。<br>
-              <em class="el_caution">即ちブロックモジュールの幅の初期値は、なるべく100%であることが望ましく</em>、このことにより高い拡張性と移植性が実現されます。<br>
+              注意点として、<em class="el_caution">ブロックモジュールには他の要素に影響を及ぼさないスタイルのみを適用します</em>。<br>
+              ただし例外として、デザインシステム上でモジュールの上下間の余白に統一されたルールがある場合は、<span class="el_inlineCode">margin-top/bottom</span>の適用を許容します。
+            </p>
+            <p class="el_sectTxt">
+              他に影響を及ぼすスタイル、即ち<span class="el_inlineCode">float</span>や<span class="el_inlineCode">width</span>等のレイアウトに関わるものは、BEMと同様に上位のモジュールのElementとしてスタイルを適用することを基本とします。この例については、この後の「複数カラムの例」のコードを参考にしてください。<br>
+              <em class="el_caution">即ちブロックモジュールの幅は、なるべく初期値のまま（多くはブロックレベルであるため、横いっぱいに広がる）あることが望ましく</em>、このことにより高い拡張性と移植性が実現されます。<br>
               この挙動については、カラムを持つブロックモジュールを例に考えると理解しやすいでしょう。
             </p>
               <section class="bl_sectBlock5">
@@ -653,7 +693,7 @@
     <pre class="brush:css; class-name:''; highlight:[]">
       
                   .bl_imgBlock {
-                    margin: 0 0 20px 0;
+                    margin-bottom: 20px;
                     border: 1px solid #ccc;
                     text-align: center;
                   }
@@ -680,7 +720,7 @@
               <section class="bl_sectBlock5">
                 <h6 class="el_ttl5">複数カラムの例</h5>
                 <p class="bl_sectBlock5_txt">
-                  <span class="el_inlineCode">bl_imgUnit</span>という要素でラップすることにより、上記のブロックモジュールを侵すことなく再利用することができます(このとき<span class="el_inlineCode">margin-top/bottom</span>にも変更が必要な場合は、併せて上書きします)。<br>
+                  <span class="el_inlineCode">bl_imgUnit</span>という要素でラップすることにより、既存のブロックモジュールに影響を与えることなく、またCSSの修正の必要もなく再利用することができます(このとき<span class="el_inlineCode">margin-top/bottom</span>にも変更が必要な場合は、併せて上書きします)。<br>
                   さらに<span class="el_inlineCode">bl_imgUnit</span>自体が高次のブロックモジュールとなったため、<em class="el_caution">今後は<span class="el_inlineCode">bl_imgUnit</span>を他に移植することも可能</em>となります。<br>
                   またwidthをカラム数に応じたモディファイアから制御することで、高い拡張性を実現します。
                 </p>
@@ -689,30 +729,28 @@
                 
   <div class="bl_codeBlock">
     <em class="bl_codeBlock_ttl">HTML</em>
-    <pre class="brush:html; class-name:''; highlight:[1,11]">
+    <pre class="brush:html; class-name:''; highlight:[1,10]">
       
-                  &lt;div class=&#34;bl_imgUnit bl_imgUnit__col2&#34;&gt;
-                    &lt;h2 class=&#34;el_blName&#34;&gt;.bl_imgUnit__col2&lt;/h2&gt;
-                    &lt;div class=&#34;bl_imgBlock&#34;&gt;
-                      ...
-                    &lt;/div&gt;
-                    &lt;div class=&#34;bl_imgBlock&#34;&gt;
-                      ...
-                    &lt;/div&gt;
-                  &lt;/div&gt;
+                  &lt;ul class=&#34;bl_imgUnit bl_imgUnit__col2&#34;&gt;
+                    &lt;li class=&#34;bl_imgUnit_item&#34;&gt;
+                      &lt;div class=&#34;bl_imgBlock&#34;&gt;...&lt;/div&gt;
+                    &lt;/li&gt;
+                    &lt;li class=&#34;bl_imgUnit_item&#34;&gt;
+                      &lt;div class=&#34;bl_imgBlock&#34;&gt;...&lt;/div&gt;
+                    &lt;/li&gt;
+                  &lt;/ul&gt;
 
-                  &lt;div class=&#34;bl_imgUnit bl_imgUnit__col3&#34;&gt;
-                    &lt;h2 class=&#34;el_blName&#34;&gt;.bl_imgUnit__col3&lt;/h2&gt;
-                    &lt;div class=&#34;bl_imgBlock&#34;&gt;
-                      ...
-                    &lt;/div&gt;
-                    &lt;div class=&#34;bl_imgBlock&#34;&gt;
-                      ...
-                    &lt;/div&gt;
-                    &lt;div class=&#34;bl_imgBlock&#34;&gt;
-                      ...
-                    &lt;/div&gt;
-                  &lt;/div&gt;
+                  &lt;ul class=&#34;bl_imgUnit bl_imgUnit__col3&#34;&gt;
+                    &lt;li class=&#34;bl_imgUnit_item&#34;&gt;
+                      &lt;div class=&#34;bl_imgBlock&#34;&gt;...&lt;/div&gt;
+                    &lt;/li&gt;
+                    &lt;li class=&#34;bl_imgUnit_item&#34;&gt;
+                      &lt;div class=&#34;bl_imgBlock&#34;&gt;...&lt;/div&gt;
+                    &lt;/li&gt;
+                    &lt;li class=&#34;bl_imgUnit_item&#34;&gt;
+                      &lt;div class=&#34;bl_imgBlock&#34;&gt;...&lt;/div&gt;
+                    &lt;/li&gt;
+                  &lt;/ul&gt;
     </pre>
   </div>
   <!-- /.bl_codeBlock -->
@@ -724,26 +762,24 @@
     <pre class="brush:css; class-name:''; highlight:[]">
       
                   .bl_imgUnit {
-                    margin: 0 0 20px 0;
+                    padding: 1%;
+                    margin-bottom: 20px;
                     border: 1px solid #ccc;
+                    box-sizing: border-box;
                     text-align: center;
-                    &gt; .bl_imgBlock {
-                      display: inline-block;
-                      margin: 0 2% 0 0;
-                      &amp;:last-child {
-                        margin-right: 0;
-                      }
-                    }
                   }
-                  .bl_imgUnit__col2 {
-                    &gt; .bl_imgBlock {
-                      width: 47%;
-                    }
+                  .bl_imgUnit_item {
+                    display: inline-block;
+                    margin: 0 2% 0 0;
                   }
-                  .bl_imgUnit__col3 {
-                    &gt; .bl_imgBlock {
-                      width: 30%;
-                    }
+                  .bl_imgUnit_item:last-child {
+                    margin-right: 0;
+                  }
+                  .bl_imgUnit__col2 .bl_imgUnit_item {
+                    width: 47%;
+                  }
+                  .bl_imgUnit__col3 .bl_imgUnit_item {
+                    width: 30%;
                   }
     </pre>
   </div>
@@ -759,8 +795,11 @@
             <!-- /.bl_sectBlock4 -->
 
             <p class="el_sectTxt">
-              以上のようにブロックモジュールというのは非常に柔軟で、パワフルにコード内を駆け回ることができます。<br>
-              ただし、その高い移植性を維持するためには高次からのネストとという少し特殊なテクニックが必要で、慣れないうちは苦労するでしょう。<br>
+              以上のようにブロックモジュールというのは非常に柔軟で、パワフルにコード内を駆け回ることができます。
+            </p>
+            <p class="el_sectTxt">
+              今回の例では<span class="el_inlineCode">.bl_imgUnit</span>という専用の高次モジュールを作成しましたが、「ブロックモジュールのwidthは初期値のままにしておく」ということを遵守していれば、他のCSSフレームワークが提供するグリッドシステムと連携することも可能です。<br>
+              ただし、その高い移植性を維持するためには「レイアウトに関するスタイルは高次モジュールから制御する」という少し特殊なテクニックが必要で、慣れないうちは苦労するでしょう。<br>
               さらに複雑なブロックモジュールの移植については、下部に<a href="#nestedModule">Advance Case</a>としてまとめたので、そちらをご参照ください。
             </p>
             <p class="el_sectTxt">
