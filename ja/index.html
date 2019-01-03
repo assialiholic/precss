@@ -1020,15 +1020,26 @@
               既に何度か言及していますが、
             </p>
             <ul class="bl_simpleList">
-              <li>見た目が変わる</li>
-              <li>大きさが変わる（主にエレメントモジュール、ブロックモジュールの子要素が対象）</li>
-              <li>一定の規則に従ってスタイルが変わる（カラム等）</li>
+              <li>あしらいが変わる</li>
+              <li>大きさが変わる</li>
+              <li>一定の規則に従って振る舞いが変わる（カラム等）</li>
             </ul>
             <p class="el_sectTxt">
-              場合はモディファイアによる上書きをPRECSSでは推奨し、モディファイア名をアンダースコア2つで表します。<br>
-              多くはモジュールグループにおいて使用されますが、状況によってはレイアウトグループ等に使用することももちろん可能です。<br>
-              注意点としてモディファイアでスタイルを上書きする際は、<em class="el_caution">基本的に複数クラスで上書きし、詳細度を高めます。</em><br>
+              などの場合はモディファイアによる上書きをPRECSSでは推奨し、アンダースコア2つの後にモディファイア名を付与します。<br>
+              「何をするモディファイアなのか」を明確にするために、モディファイア名は「<span class="el_inlineCode">__backgroundColorOrange</span>」のように「<span class="el_inlineCode">__keyValue</span>」の形を基本としますが、次の例のコードのようにおおよそ想像がつくものであればkeyの省略が可能です。<br>
+              また名前が長くなるのを避けたい場合は、Emmetのショートハンドに準じて「<span class="el_inlineCode">__backgroundColorOrange</span>」を「<span class="el_inlineCode">__bgcOrange</span>」のように省略することも可能です。
+            </p>
+            <p class="el_sectTxt">
+              多くはモジュールグループにおいて使用されますが、状況によってはレイアウトグループ等に使用することもできます。<br>
+              注意点としてモディファイアでスタイルを上書きする際は、<em class="el_caution">基本的に複数クラスを使用して、詳細度を高めることを推奨しています。</em><br>
               「スタイルを上書きする」ということは意図的なアクションであり、であればCSSの読み込み順でスタイルに変化が出てしまうのは好ましくありません。
+            </p>
+            <p class="el_sectTxt">
+              これもBEMとは異なる思想ですが、「CSSが自分の手を離れても、CSSのルールセットの順番が変わることは絶対ない」と言い切ることは私にはできません。<br>
+              そのためweb開発者の都合を優先するのではなく、あくまで「スタイルを上書きする」という目的に立ち返り、想定外の事態が発生してもなるべくサイトが壊れないことを優先し、このようなルールとしています。
+            </p>
+            <p class="el_sectTxt">
+              また「状態」を変更する際にももちろんモディファイアを使用することができますが、基本的には後述するプログラムグループで変更を制御することをPRECSSでは推奨しています。
             </p>
             <section id="modifier_element" class="bl_sectBlock4"><h5 class="el_ttl4">エレメントモジュールの例</h5>
               
@@ -1074,12 +1085,13 @@
                 ブロックモジュールにおいて子要素にモディファイアによる変更を適用する際、
               </p>
               <ul class="bl_simpleList">
-                <li>特定の子要素のみにモディファイアを適用し、スタイルを上書きする</li>
-                <li>ブロックモジュール自体にモディファイアを適用し、モディファイアからのネストで子要素のスタイルを上書きする</li>
+                <li>対象の子要素のみにモディファイアを適用する</li>
+                <li>ブロックモジュールのルート要素にモディファイアを適用する</li>
               </ul>
               <p class="el_sectTxt">
                 の2通りの方法があげられます。<br>
-                前者の場合はセオリー通り複数クラス指定をすることにより、後者の場合はモディファイアからのネストで子要素を指定することにより詳細度を高めます。
+                前者の場合はセオリー通り複数クラス指定をすることにより、後者の場合はモディファイア名と子（孫）結合子を使用することにより、詳細度を高めます。<br>
+                後者の方法はルート要素に付与した1つのモディファイアで、複数の子要素のスタイルを変更したい場合に最適です。
               </p>
               <iframe class="el_iframe js_iframe" src="/sample/modifier.html"></iframe>
               
@@ -1093,22 +1105,22 @@
 
                   &lt;p class=&#34;bl_sectBlock_txt cf&#34;&gt;
                     &lt;!-- 元のモジュール --&gt;
-                    &lt;img class=&#34;bl_sectBlock_txt_img&#34;&gt;
+                    &lt;img class=&#34;bl_sectBlock_img&#34;&gt;
                     Lorem ipsum...
                   &lt;/p&gt;
 
                   &lt;p class=&#34;bl_sectBlock_txt cf&#34;&gt;
-                    &lt;!-- 一部のみの挙動が変わる例 --&gt;
-                    &lt;img class=&#34;bl_sectBlock_txt_img bl_sectBlock_txt_img__rev&#34;&gt;
+                    &lt;!-- 対象の子要素のみにモディファイアを適用する場合 --&gt;
+                    &lt;img class=&#34;bl_sectBlock_img bl_sectBlock_img__rev&#34;&gt;
                     Lorem ipsum...
                   &lt;/p&gt;
                 &lt;/div&gt;
 
                 &lt;!-- 子要素複数に対してスタイルを上書きする例 --&gt;
-                &lt;div class=&#34;bl_sectBlock bl_sectBlock__sml&#34;&gt;
-                  &lt;h3 class=&#34;bl_sectBlock_ttl&#34;&gt;.bl_sectBlock__sml&lt;/h3&gt;
+                &lt;div class=&#34;bl_sectBlock bl_sectBlock__small&#34;&gt;
+                  &lt;h3 class=&#34;bl_sectBlock_ttl&#34;&gt;.bl_sectBlock__small&lt;/h3&gt;
                   &lt;p class=&#34;bl_sectBlock_txt cf&#34;&gt;
-                    &lt;img class=&#34;bl_sectBlock_txt_img&#34;&gt;
+                    &lt;img class=&#34;bl_sectBlock_img&#34;&gt;
                     Lorem ipsum...
                   &lt;/p&gt;
                 &lt;/div&gt;
@@ -1122,39 +1134,49 @@
     <em class="bl_codeBlock_ttl">CSS</em>
     <pre class="brush:css; class-name:''; highlight:[]">
       
-                //元のモジュール
-                .bl_sectBlock_txt_img {
+                // 通常のスタイル
+                .bl_sectBlock_img {
                   float: left;
                   margin: 0 10px 10px 0;
-                  //一部のみの挙動が変わる例
-                  &amp;.bl_sectBlock_txt_img__rev {
-                    float: right;
-                    margin: 0 0 10px 10px;
-                  }
                 }
 
-                //子要素複数に対してスタイルを上書きする例
-                .bl_sectBlock {
-                  &amp;.bl_sectBlock__sml {
-                    &gt; .bl_sectBlock_ttl {
-                      font-size: .8em;
-                    }
-                    &gt; .bl_sectBlock_txt {
-                      font-size: .5em;
-                    }
-                    .bl_sectBlock_txt_img {
-                      width: 5%;
-                    }
-                  }
+                // 対象の子要素のみにモディファイアを適用する場合
+                .bl_sectBlock_img.bl_sectBlock_img__rev {
+                  float: right;
+                  margin: 0 0 10px 10px;
+                }
+
+
+                // 通常のスタイル
+                .bl_sectBlock_ttl {
+                  font-size: 1.1em;
+                }
+                .bl_sectBlock_txt {
+                  margin-bottom: 20px;
+                }
+                .bl_sectBlock_img {
+                  float: left;
+                  margin: 0 10px 10px 0;
+                }
+
+                // 子要素複数に対してスタイルを上書きする例
+                .bl_sectBlock__small .bl_sectBlock_ttl {
+                  font-size: .8em;
+                }
+                .bl_sectBlock__small .bl_sectBlock_txt {
+                  font-size: .5em;
+                }
+                .bl_sectBlock__small .bl_sectBlock_img {
+                  width: 5%;
                 }
     </pre>
   </div>
   <!-- /.bl_codeBlock -->
 
               <p class="el_sectTxt">
-                繰り返しになりますが、ブロックモジュールそれ自体の大きさの変化に対して、モディファイアを付加することはあまり推奨しません。なぜなら大きさを固定にしてしまった場合、「その大きさが入るのか」というのは移植先の大きさ（言い換えればコンテキスト）に左右され、ブロックモジュールはエレメントモジュールに比べバリエーションが不定になりがちだからです。<br>
+                繰り返しになりますが、ブロックモジュールそれ自体の大きさの変化に対して、モディファイアを付加することはあまり推奨しません。なぜなら大きさを固定にしてしまった場合、「その大きさが入るのか」というのは移植先のコンテキストに左右され、ブロックモジュールはエレメントモジュールに比べバリエーションが不定になりがちだからです。<br>
                 ブロックモジュールは大きめに使われることが多いので、レスポンシブ時の破綻のリスクも、エレメントモジュールに比べ当然高いです。<br>
-                ブロックモジュールが他所のモジュール内にネストされる場合は、モディファイアではなく移植先のモジュールからのネストでスタイルを上書きすることを推奨します。（詳しくは<a href="#advance">Advance Case</a>にて解説しています）<br>
+                ブロックモジュールが他所のモジュール内にネストされる場合は、モディファイアではなくネスト先のモジュールの子要素（BEMでいうElement）をセレクタとしてスタイリングすることを推奨します。（詳しくは<a href="#advance">Advance Case</a>にて解説しています）<br>
               </p>
             </section>
             <!-- /.bl_sectBlock4 -->
