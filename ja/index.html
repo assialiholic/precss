@@ -176,7 +176,7 @@
       <section class="bl_sectBlock">
         <h2 id="rule" class="el_ttl">記法</h2>
         <p class="el_sectTxt">
-          CSSの記述方法それ自体については、基本的に<a href="https://google.github.io/styleguide/htmlcssguide.xml" target="_blank">Google HTML/CSS Style Guide</a>、<a href="https://github.com/necolas/idiomatic-css" target="_blank">Principles of writing consistent, idiomatic CSS</a>に則ることを推奨します。
+          CSSの記述方法それ自体については、基本的に<a href="https://google.github.io/styleguide/htmlcssguide.html" target="_blank">Google HTML/CSS Style Guide</a>、<a href="https://github.com/necolas/idiomatic-css" target="_blank">Principles of writing consistent, idiomatic CSS</a>に則ることを推奨します。
         </p>
       </section>
       <section class="bl_sectBlock">
@@ -184,8 +184,8 @@
           <h2 class="el_ttl">命名規則</h2>
           <p class="el_sectTxt">
             PRECSSでは、意図的に記述する全てのクラスに種類に応じた2文字の接頭辞を付加します。<br>
-            接頭辞及び単語間は全て構造に基づきスネークケースで結合し、1つの構造内に複数の単語がある場合はその部分のみキャメルケースを使用します。<br>
-            基本的にスタイルのためのID属性は使用せず、全てクラス属性でまかないます。
+            接頭辞及び単語間はモジュールの構造に基づきスネークケースで結合し、1つの構造内に複数の単語がある場合はその部分のみキャメルケースを使用します。<br>
+            基本的にIDセレクタは使用せず、全てクラスセレクタでまかないます。
           </p>
           
           
@@ -237,7 +237,8 @@
           </ul>
           <p class="el_sectTxt">
             これらは後述する5つのグループいずれにおいても、必要に応じて汎用的に使用することができます。<br>
-            特に<span class="el_inlineCode">_wrapper</span>と<span class="el_inlineCode">_inner</span>においては、構造として明確であり、かえって冗長性が増すためその子要素に名前を継承させる必要はありません。
+            モジュール内の子要素は、モジュールのルートにあたるクラス名のみを継承するのが基本となります。<br>
+            <span class="el_inlineCode">_wrapper</span>においては少しイレギュラーですが、冗長性が増すのを回避するために<span class="el_inlineCode">_wrapper</span>の子要素に「wrapper」という名前を継承させる必要はありません。
           </p>
           
           
@@ -282,7 +283,7 @@
           <h3 class="el_ttl2">単語を省略する場合</h3>
           <p class="el_sectTxt">
             CSSにおけるモジュール設計は非常に素晴らしいアイディアですが、命名が冗長になってしまうのは避けられない問題です。<br>
-            PRECSSでは特に規則を設けませんが、単語を省略する場合は<a href="https://goo.gl/VblUdM" target="_blank">Google HTML/CSS Style Guide</a>に基づくことを推奨します。<br>
+            PRECSSでは特に規則を設けませんが、単語を省略する場合は<a href="https://google.github.io/styleguide/htmlcssguide.html#ID_and_Class_Name_Style" target="_blank">Google HTML/CSS Style Guide</a>に基づくことを推奨します。<br>
             また2語以上で1つのまとまりを表す語群は、それぞれの頭文字の大文字のみで表現することも推奨します。ただし、ある程度一般的であったり、連続するパターンがあることが望ましいでしょう。<br>
             その他、一般的に使われる語を参考として併せて提示します。
           </p>
@@ -340,7 +341,7 @@
         <section id="nameRule_series" class="bl_sectBlock2">
           <h3 class="el_ttl2">シリーズを形成する場合</h3>
            <p class="el_sectTxt">
-             類似しているものは連番を付けて管理することを推奨します。ただし、シリーズを形成する、しないに関わらず1つ目のものには連番を付けません。
+             類似しているものはなるべく意味のある、または目的に即した命名を推奨しますが、連番を付けて管理することも許容します。ただしその場合、1つ目のものには連番を付けません。
           </p>
           
           
