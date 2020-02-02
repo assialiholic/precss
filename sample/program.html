@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+
+
+
+<div class="ly_cont ">
+  
+  
+<dl class="bl_accordion js_accordion">
+  <dt>
+    <button class="bl_accordion_btn js_accordion_ttl is_active" type="button">TITLE HERE</button>
+  </dt>
+  <dd class="bl_accordion_body js_accordion_body is_active">
+    <p class="bl_accordion_txt">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt, voluptates!
+    </p>
+  </dd>
+</dl>
+  
+</div>
+<!-- /.ly_cont -->
+
+
+<script src="http://cdn.jsdelivr.net/jquery/1.8.3/jquery-1.8.3.min.js"></script>
+<script>
+  $(function () {
+    $('.js_accordion .js_accordion_ttl').on('click', function () {
+      $(this).toggleClass('is_active')
+      $(this)
+        .parent()
+        .next('.js_accordion_body')
+        .toggleClass('is_active')
+    })
+  })
+</script>
+</body>
+</html>
