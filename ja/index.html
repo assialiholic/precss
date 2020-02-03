@@ -23,6 +23,11 @@
   <script defer src="//use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
   <script defer src="/js/jquery-3.4.1.min.js"></script>
   <script defer src="/js/scripts.js"></script>
+  <script>
+    function resizeIframe(obj) {
+      obj.style.height = obj.contentWindow.document.documentElement.scrollHeight + 'px';
+    }
+  </script>
 </head>
 <body>
   <header class="ly_header">
@@ -526,7 +531,7 @@
               原則としてこのグループには、レイアウトに関わるスタイリング（gridやflex、width、margin、padding、floatなど）しか行いません。あくまでコンテンツが入る「枠」を定義するだけで、コンテンツは後述するモジュールグループで作成します。<br>
               ただし「ヘッダーの背景色は黒」など「枠」と「あしらい」の粒度が一致している場合は、必要に応じてレイアウト以外のスタイリングを行うことも許容します。
             </p>
-            <iframe title="レイアウトグループのサンプル" loading="lazy" class="el_iframe js_iframe" src="/sample/layout.html"></iframe>
+            <iframe title="レイアウトグループのサンプル" loading="lazy" class="el_iframe js_iframe" src="/sample/layout.html" onload="resizeIframe(this)"></iframe>
             
             
   <div class="bl_codeBlock">
@@ -632,7 +637,7 @@
               それら複数の子要素やエレメントモジュールを1つの塊としてまとめ、サイト内のどこでも使用できるようにすることがブロックモジュールの基本的な考え方です。webサイトの中核を担うもので、多くのモジュールはこのブロックモジュールに該当します。<br>
               以下はブロックモジュールの例です。
             </p>
-            <iframe title="ブロックモジュールのサンプル" loading="lazy" class="el_iframe js_iframe" src="/sample/blockModule.html"></iframe>
+            <iframe title="ブロックモジュールのサンプル" loading="lazy" class="el_iframe js_iframe" src="/sample/blockModule.html" onload="resizeIframe(this)"></iframe>
             
             
   <div class="bl_codeBlock">
@@ -703,7 +708,7 @@
               次のコードは4・8・9行目でそれぞれ直近の親要素のクラス名を引き継ぎ、構造（依存）を明確にするとともにクラス名の重複を回避しています。
             </p>
 
-            <iframe title="ネストされた子要素のクラス名に直近の子要素の名前を含めた例" loading="lazy" class="el_iframe js_iframe" src="/sample/blockModule2.html"></iframe>
+            <iframe title="ネストされた子要素のクラス名に直近の子要素の名前を含めた例" loading="lazy" class="el_iframe js_iframe" src="/sample/blockModule2.html" onload="resizeIframe(this)"></iframe>
 
             
             
@@ -812,7 +817,7 @@
             <p>
               この状態ブロックモジュールの基本状態であり、もちろん単体で使用できるほか、レイアウトに関する指定をしないことで何処へでも移植することが可能です。
             </p>
-            <iframe title="ブロックモジュールの基本状態の例" loading="lazy" class="el_iframe js_iframe" src="/sample/blockModule3.html"></iframe>
+            <iframe title="ブロックモジュールの基本状態の例" loading="lazy" class="el_iframe js_iframe" src="/sample/blockModule3.html" onload="resizeIframe(this)"></iframe>
             
             
   <div class="bl_codeBlock">
@@ -866,7 +871,7 @@
                                                            を他に移植することも可能</em>となります。<br>
               またwidthをカラム数に応じたモディファイアから制御することで、高い拡張性を実現します。CSSにおいて、元の <code>.bl_card</code>モジュールのスタイリングは一切調整していないことに着目してください。
             </p>
-            <iframe title="ブロックモジュールがカラムを形成する例" loading="lazy" class="el_iframe js_iframe" src="/sample/blockModule4.html"></iframe>
+            <iframe title="ブロックモジュールがカラムを形成する例" loading="lazy" class="el_iframe js_iframe" src="/sample/blockModule4.html" onload="resizeIframe(this)"></iframe>
             
             
   <div class="bl_codeBlock">
@@ -946,7 +951,7 @@
             <p>
               極端な例を示すと、これらをメインエリア・サイドエリアそれぞれに移植するとこのような形になります。きちんと設計しておけば、ここまで極端なことをしても期待通りにモジュールが動作します。
             </p>
-            <iframe title="ブロックモジュールを極端に使用した例" loading="lazy" class="el_iframe js_iframe" src="/sample/blockModule5.html"></iframe>
+            <iframe title="ブロックモジュールを極端に使用した例" loading="lazy" class="el_iframe js_iframe" src="/sample/blockModule5.html" onload="resizeIframe(this)"></iframe>
 
             <p>
               以上のようにブロックモジュールというのは非常に柔軟で、パワフルにサイト内を駆け回ることができます。
@@ -990,7 +995,7 @@
             個別のスキンは後述するモディファイアで実装しますが、ベースクラスに標準状態として予めスキンを適用することでモディファイアを減らすことも推奨します（次のコードにおける.el_label、.el_btn）。
           </p>
 
-          <iframe title="エレメントモジュールの例" loading="lazy" class="el_iframe js_iframe" src="/sample/elementModule.html"></iframe>
+          <iframe title="エレメントモジュールの例" loading="lazy" class="el_iframe js_iframe" src="/sample/elementModule.html" onload="resizeIframe(this)"></iframe>
           
           
   <div class="bl_codeBlock">
@@ -1154,7 +1159,7 @@
           あまりエレメントモジュールのモディファイアパターンにハマらない場合は、もちろん移植先のモジュールのElementとしての指定か、子（孫）セレクタを使用してスタイリングすることも可能です。<br>
           次のコードはコンテキストから制御した例と、モディファイアで制御した例です。
         </p>
-        <iframe title="エレメントモジュールの調整する場合の2パターンの例" loading="lazy" class="el_iframe js_iframe" src="/sample/elementModule2.html"></iframe>
+        <iframe title="エレメントモジュールの調整する場合の2パターンの例" loading="lazy" class="el_iframe js_iframe" src="/sample/elementModule2.html" onload="resizeIframe(this)"></iframe>
         
         
   <div class="bl_codeBlock">
@@ -1302,7 +1307,7 @@
           <p>
             のデモです。
           </p>
-          <iframe title="ブロックモジュールに対するモディファイアの付け方の2つのパターン" loading="lazy" class="el_iframe js_iframe" src="/sample/modifier.html"></iframe>
+          <iframe title="ブロックモジュールに対するモディファイアの付け方の2つのパターン" loading="lazy" class="el_iframe js_iframe" src="/sample/modifier.html" onload="resizeIframe(this)"></iframe>
           
           
   <div class="bl_codeBlock">
@@ -1539,7 +1544,7 @@
               またプログラムグループを用いて実現したいような挙動に関しては、これら2つの接頭辞ではなく、カスタムデータ属性やWAI-ARIAを使用することも許容します。
             </p>
 
-            <iframe title="プログラムグループの例" loading="lazy" class="el_iframe js_iframe" src="/sample/program.html"></iframe>
+            <iframe title="プログラムグループの例" loading="lazy" class="el_iframe js_iframe" src="/sample/program.html" onload="resizeIframe(this)"></iframe>
             
             
   <div class="bl_codeBlock">
@@ -1749,7 +1754,7 @@
           <p>
             したいとしましょう。次のような表示です。
           </p>
-          <iframe title="アコーディオン内にメディアを埋め込んだ例" loading="lazy" class="el_iframe js_iframe" src="/sample/advance.html"></iframe>
+          <iframe title="アコーディオン内にメディアを埋め込んだ例" loading="lazy" class="el_iframe js_iframe" src="/sample/advance.html" onload="resizeIframe(this)"></iframe>
           <p>
             この実装方法に関しては、次のいずれかを推奨します。
           </p>
@@ -1942,7 +1947,7 @@
           <p>
             メディアをアコーディオンへ埋め込んだ際にメディアの内部に変更が必要な場合は、メディアのモディファイア作成して処理します。ここでは、メディア内のフォントサイズが全体的に小さくなる例を示します。
           </p>
-          <iframe title="アコーディオン内のメディアはフォントサイズを小さくする例" loading="lazy" class="el_iframe js_iframe" src="/sample/advance2.html"></iframe>
+          <iframe title="アコーディオン内のメディアはフォントサイズを小さくする例" loading="lazy" class="el_iframe js_iframe" src="/sample/advance2.html" onload="resizeIframe(this)"></iframe>
           
           
   <div class="bl_codeBlock">
